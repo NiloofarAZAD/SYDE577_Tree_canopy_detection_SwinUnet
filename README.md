@@ -1,19 +1,31 @@
-# Swin-Unet
-[ECCVW2022] The codes for the work "Swin-Unet: Unet-like Pure Transformer for Medical Image Segmentation"(https://arxiv.org/abs/2105.05537). Our paper has been accepted by ECCV 2022 MEDICAL COMPUTER VISION WORKSHOP (https://mcv-workshop.github.io/). We updated the Reproducibility. I hope this will help you to reproduce the results.
+# Tree Canopy Detection Using Swin-Unet
 
+This repository contains my implementation and modifications of the Swin-Unet architecture for the task of **tree canopy detection** using my own dataset.  
+The project adapts the original Swin-Unet model (designed for medical image segmentation) to a remote-sensing / environmental application.
 
-## References
-* [TransUnet](https://github.com/Beckschen/TransUNet)
-* [SwinTransformer](https://github.com/microsoft/Swin-Transformer)
+## About This Project
+- Based on the original Swin-Unet implementation by Hu Cao et al.  
+- Modified to support tree canopy segmentation datasets  
+- Includes changes in:
+  - dataset loading pipeline  
+  - configuration files  
+  - training hyperparameters  
+  - preprocessing scripts  
+  - evaluation metrics (IoU, pixel accuracy, etc.)  
 
-## Citation
+## Reference to Original Work
+This project is **built on top of the following repository**:
+
+**Swin-Unet: https://github.com/HuCaoFighting/Swin-Unet**
+
+Please refer to the original paper for details about the architecture:
 
 ```bibtex
 @InProceedings{swinunet,
-author = {Hu Cao and Yueyue Wang and Joy Chen and Dongsheng Jiang and Xiaopeng Zhang and Qi Tian and Manning Wang},
-title = {Swin-Unet: Unet-like Pure Transformer for Medical Image Segmentation},
-booktitle = {Proceedings of the European Conference on Computer Vision Workshops(ECCVW)},
-year = {2022}
+author    = {Hu Cao and Yueyue Wang and Joy Chen and Dongsheng Jiang and Xiaopeng Zhang and Qi Tian and Manning Wang},
+title     = {Swin-Unet: Unet-like Pure Transformer for Medical Image Segmentation},
+booktitle = {Proceedings of the European Conference on Computer Vision Workshops (ECCVW)},
+year      = {2022}
 }
 
 
