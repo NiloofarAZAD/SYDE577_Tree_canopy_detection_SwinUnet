@@ -14,7 +14,7 @@ class DiceLoss(nn.Module):
     def _one_hot_encoder(self, input_tensor):
         tensor_list = []
         for i in range(self.n_classes):
-            temp_prob = input_tensor == i  # * torch.ones_like(input_tensor)
+            temp_prob = input_tensor == i  
             tensor_list.append(temp_prob.unsqueeze(1))
         output_tensor = torch.cat(tensor_list, dim=1)
         return output_tensor.float()
@@ -66,7 +66,7 @@ def test_single_volume(image, label, net, classes, patch_size=[256, 256], test_s
             slice = image[ind, :, :]
             x, y = slice.shape[0], slice.shape[1]
             if x != patch_size[0] or y != patch_size[1]:
-                slice = zoom(slice, (patch_size[0] / x, patch_size[1] / y), order=3)  # previous using 0
+                slice = zoom(slice, (patch_size[0] / x, patch_size[1] / y), order=3) 
             input = torch.from_numpy(slice).unsqueeze(0).unsqueeze(0).float().cuda()
             net.eval()
             with torch.no_grad():

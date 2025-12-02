@@ -1,153 +1,218 @@
-from os.path import split
-import argparse
-import logging
 import os
-import random
-import sys
-
+import json
 import numpy as np
+import cv2
 import torch
-import torch.backends.cudnn as cudnn
-from torch.utils.data import DataLoader
-from tqdm import tqdm
-
-from config import get_config
-from datasets.dataset_synapse import Synapse_dataset
+from collections import defaultdict
+from torch.utils.data import Dataset, DataLoader
+from torchvision import transforms
+from PIL import Image
 from networks.vision_transformer import SwinUnet as ViT_seg
-from utils import test_single_volume
-
-parser = argparse.ArgumentParser()
-parser.add_argument('--root_path', type=str,
-                    default='../data/Synapse/test_vol_h5',
-                    help='root dir for validation volume data')  # for acdc volume_path=root_dir
-parser.add_argument('--dataset', type=str,
-                    default='datasets', help='experiment_name')
-parser.add_argument('--num_classes', type=int,
-                    default=9, help='output channel of network')
-parser.add_argument('--list_dir', type=str,
-                    default='./lists/lists_Synapse', help='list dir')
-parser.add_argument('--output_dir', type=str, help='output dir')
-parser.add_argument('--max_iterations', type=int, default=30000, help='maximum epoch number to train')
-parser.add_argument('--max_epochs', type=int, default=150, help='maximum epoch number to train')
-parser.add_argument('--batch_size', type=int, default=24,
-                    help='batch_size per gpu')
-parser.add_argument('--img_size', type=int, default=224, help='input patch size of network input')
-parser.add_argument('--is_savenii', action="store_true", help='whether to save results during inference')
-parser.add_argument('--test_save_dir', type=str, default='../predictions', help='saving prediction as nii!')
-parser.add_argument('--deterministic', type=int, default=1, help='whether use deterministic training')
-parser.add_argument('--base_lr', type=float, default=0.01, help='segmentation network learning rate')
-parser.add_argument('--seed', type=int, default=1234, help='random seed')
-parser.add_argument('--cfg', type=str, required=True, metavar="FILE", help='path to config file', )
-parser.add_argument(
-    "--opts",
-    help="Modify config options by adding 'KEY VALUE' pairs. ",
-    default=None,
-    nargs='+',
-)
-parser.add_argument('--zip', action='store_true', help='use zipped dataset instead of folder dataset')
-parser.add_argument('--cache-mode', type=str, default='part', choices=['no', 'full', 'part'],
-                    help='no: no cache, '
-                         'full: cache all data, '
-                         'part: sharding the dataset into nonoverlapping pieces and only cache one piece')
-parser.add_argument('--resume', help='resume from checkpoint')
-parser.add_argument('--accumulation-steps', type=int, help="gradient accumulation steps")
-parser.add_argument('--use-checkpoint', action='store_true',
-                    help="whether to use gradient checkpointing to save memory")
-parser.add_argument('--amp-opt-level', type=str, default='O1', choices=['O0', 'O1', 'O2'],
-                    help='mixed precision opt level, if O0, no amp is used')
-parser.add_argument('--tag', help='tag of experiment')
-parser.add_argument('--eval', action='store_true', help='Perform evaluation only')
-parser.add_argument('--throughput', action='store_true', help='Test throughput only')
-
-parser.add_argument("--n_class", default=4, type=int)
-parser.add_argument("--split_name", default="test", help="Directory of the input list")
-
-args = parser.parse_args()
-
-if args.dataset == "Synapse":
-    args.volume_path = os.path.join(args.volume_path, "test_vol_h5")
-config = get_config(args)
+from config import get_config
+import argparse
 
 
-def inference(args, model, test_save_path=None):
-    db_test = Synapse_dataset(base_dir=args.volume_path, split=args.split_name, list_dir=args.list_dir)
-    testloader = DataLoader(db_test, batch_size=1, shuffle=False, num_workers=1)
-    logging.info("{} test iterations per epoch".format(len(testloader)))
+# ============================
+# CONFIG
+# ============================
+IMAGE_DIR = "./datasets/Synapse/evaluation_images/"
+MODEL_PATH = "./model_out/best_model.pth"
+OUTPUT_JSON = "submission_swinunet.json"
+SAMPLE_JSON = "./datasets/Synapse/sample_answer.json"
+
+IMG_SIZE = 224
+CONF_THRESHOLD = 0.5
+MIN_CONTOUR_AREA = 5
+
+CLASS_MAP = {
+    1: "group_of_trees",
+    2: "individual_tree"
+}
+# background = 0
+
+
+# ============================
+# Dataset
+# ============================
+class EvalDataset(Dataset):
+    def __init__(self, image_dir):
+        self.files = sorted([
+            f for f in os.listdir(image_dir)
+            if os.path.isfile(os.path.join(image_dir, f))
+        ])
+        self.image_dir = image_dir
+
+        self.transform = transforms.Compose([
+            transforms.Resize((IMG_SIZE, IMG_SIZE)),
+            transforms.ToTensor()
+        ])
+
+    def __len__(self):
+        return len(self.files)
+
+    def __getitem__(self, index):
+        file_name = self.files[index]
+        path = os.path.join(self.image_dir, file_name)
+
+        img = Image.open(path).convert("RGB")
+        orig_w, orig_h = img.size
+        tensor_img = self.transform(img)
+
+        return tensor_img, file_name, (orig_w, orig_h)
+
+
+# ============================
+# Load Swin-Unet
+# ============================
+def load_swinunet(model_path):
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('--root_path', type=str, default='./datasets')
+    parser.add_argument('--dataset', type=str, default='Synapse')
+    parser.add_argument('--list_dir', type=str, default='./datasets/Synapse/lists')
+    parser.add_argument('--num_classes', type=int, default=3)
+    parser.add_argument('--output_dir', type=str, default=None)
+    parser.add_argument('--max_iterations', type=int, default=30000)
+    parser.add_argument('--max_epochs', type=int, default=300)
+    parser.add_argument('--batch_size', type=int, default=1)
+    parser.add_argument('--n_gpu', type=int, default=1)
+    parser.add_argument('--deterministic', type=int, default=1)
+    parser.add_argument('--base_lr', type=float, default=0.01)
+    parser.add_argument('--img_size', type=int, default=IMG_SIZE)
+    parser.add_argument('--seed', type=int, default=1234)
+    parser.add_argument('--cfg', type=str, default="configs/swin_tiny_patch4_window7_224_lite.yaml")
+    parser.add_argument('--opts', default=None, nargs='+')
+    parser.add_argument('--zip', action='store_true')
+    parser.add_argument('--cache-mode', type=str, default='part')
+    parser.add_argument('--resume', default=None)
+    parser.add_argument('--accumulation-steps', default=None)
+    parser.add_argument('--use-checkpoint', action='store_true')
+    parser.add_argument('--amp-opt-level', type=str, default='O1')
+    parser.add_argument('--tag', default=None)
+    parser.add_argument('--eval', action='store_true')
+    parser.add_argument('--throughput', action='store_true')
+    parser.add_argument('--n_class', type=int, default=3)
+    parser.add_argument('--num_workers', type=int, default=8)
+    parser.add_argument('--eval_interval', type=int, default=1)
+
+    args = parser.parse_args(args=[])
+
+    config = get_config(args)
+    model = ViT_seg(config, img_size=args.img_size, num_classes=args.num_classes).cuda()
+    model.load_state_dict(torch.load(model_path))
     model.eval()
-    metric_list = 0.0
-    for i_batch, sampled_batch in tqdm(enumerate(testloader)):
-        # h, w = sampled_batch["image"].size()[2:]
-        image, label, case_name = sampled_batch["image"], sampled_batch["label"], sampled_batch['case_name'][0]
-        if args.dataset == "datasets":
-            case_name = split(case_name.split(",")[0])[-1]
-        metric_i = test_single_volume(image, label, model, classes=args.num_classes,
-                                      patch_size=[args.img_size, args.img_size],
-                                      test_save_path=test_save_path, case=case_name, z_spacing=args.z_spacing)
-        metric_list += np.array(metric_i)
-        logging.info('idx %d case %s mean_dice %f mean_hd95 %f' % (
-            i_batch, case_name, np.mean(metric_i, axis=0)[0], np.mean(metric_i, axis=0)[1]))
-    metric_list = metric_list / len(db_test)
-    for i in range(1, args.num_classes):
-        logging.info('Mean class %d mean_dice %f mean_hd95 %f' % (i, metric_list[i - 1][0], metric_list[i - 1][1]))
-    performance = np.mean(metric_list, axis=0)[0]
-    mean_hd95 = np.mean(metric_list, axis=0)[1]
-    logging.info('Testing performance in best val model: mean_dice : %f mean_hd95 : %f' % (performance, mean_hd95))
-    return "Testing Finished!"
+    return model
 
 
+# ============================
+# Mask → Polygons in ORIGINAL RESOLUTION
+# ============================
+def mask_to_polygons(pred_mask, class_id, orig_size):
+    orig_w = int(orig_size[0])
+    orig_h = int(orig_size[1])
+
+    binary_mask = (pred_mask == class_id).astype(np.uint8)
+    small_mask = cv2.resize(binary_mask, (128, 128), interpolation=cv2.INTER_NEAREST)
+
+    contours, _ = cv2.findContours(small_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+    polygons = []
+    scale_w = orig_w / 128.0
+    scale_h = orig_h / 128.0
+
+    for cnt in contours:
+        if cv2.contourArea(cnt) < MIN_CONTOUR_AREA:
+            continue
+
+        poly = cnt.reshape(-1, 2).astype(float)
+        poly[:, 0] *= scale_w
+        poly[:, 1] *= scale_h
+
+        polygons.append(poly.flatten().tolist())
+
+    return polygons
+
+
+# ============================
+# Confidence from probability map
+# ============================
+def compute_confidence(prob_map, binary_mask_224):
+    vals = prob_map[binary_mask_224 == 1]
+    if len(vals) == 0:
+        return 0.0
+    return float(vals.mean())
+
+
+# ============================
+# Main inference
+# ============================
+def run_inference():
+    print("Loading model...")
+    model = load_swinunet(MODEL_PATH)
+
+    dataset = EvalDataset(IMAGE_DIR)
+    loader = DataLoader(dataset, batch_size=1, shuffle=False)
+
+    print("Loading sample JSON...")
+    with open(SAMPLE_JSON, "r") as f:
+        submission_data = json.load(f)
+
+    predictions = defaultdict(list)
+
+    print("Running inference...")
+
+    with torch.no_grad():
+        for img_tensor, file_name, orig_size in loader:
+            img_tensor = img_tensor.cuda()
+            file_name = file_name[0]
+
+            logits = model(img_tensor)
+            probs = torch.softmax(logits, dim=1).squeeze().cpu().numpy()  # (3,224,224)
+            mask = np.argmax(probs, axis=0)
+
+            orig_w = int(orig_size[0])
+            orig_h = int(orig_size[1])
+
+            scale_x = IMG_SIZE / orig_w
+            scale_y = IMG_SIZE / orig_h
+
+            for cid, cname in CLASS_MAP.items():
+
+                polygons = mask_to_polygons(mask, cid, orig_size)
+
+                for poly in polygons:
+                    poly_np = np.array(poly).reshape(-1, 2)
+
+                    # Scale ORIGINAL polygon → 224×224
+                    poly_scaled = poly_np.copy().astype(float)
+                    poly_scaled[:, 0] *= scale_x
+                    poly_scaled[:, 1] *= scale_y
+
+                    # Fill confidence mask
+                    poly_mask = np.zeros((IMG_SIZE, IMG_SIZE), np.uint8)
+                    cv2.fillPoly(poly_mask, [poly_scaled.astype(np.int32)], 1)
+
+                    score = compute_confidence(probs[cid], poly_mask)
+                    if score < CONF_THRESHOLD:
+                        continue
+
+                    predictions[file_name].append({
+                        "class": cname,
+                        "confidence_score": score,
+                        "segmentation": poly  # original resolution polygon
+                    })
+
+    # attach predictions
+    for img in submission_data["images"]:
+        fname = img["file_name"]
+        img["annotations"] = predictions[fname]
+
+    with open(OUTPUT_JSON, "w") as f:
+        json.dump(submission_data, f, indent=2)
+
+    print("Submission saved as:", OUTPUT_JSON)
+
+
+# RUN
 if __name__ == "__main__":
-    if not args.deterministic:
-        cudnn.benchmark = True
-        cudnn.deterministic = False
-    else:
-        cudnn.benchmark = False
-        cudnn.deterministic = True
-    random.seed(args.seed)
-    np.random.seed(args.seed)
-    torch.manual_seed(args.seed)
-    torch.cuda.manual_seed(args.seed)
-
-    dataset_name = args.dataset
-    dataset_config = {
-        args.dataset: {
-            'root_path': args.root_path,
-            'list_dir': f'./lists/{args.dataset}',
-            'num_classes': args.n_class,
-            "z_spacing": 1
-        },
-    }
-    args.num_classes = dataset_config[dataset_name]['num_classes']
-    args.volume_path = dataset_config[dataset_name]['root_path']
-    # args.Dataset = dataset_config[dataset_name]['Dataset']
-    args.list_dir = dataset_config[dataset_name]['list_dir']
-    args.z_spacing = dataset_config[dataset_name]['z_spacing']
-    args.is_pretrain = True
-
-    net = ViT_seg(config, img_size=args.img_size, num_classes=args.num_classes).cuda()
-
-    snapshot = os.path.join(args.output_dir, 'best_model.pth')
-    if not os.path.exists(snapshot):
-        snapshot = snapshot.replace('best_model', 'epoch_' + str(args.max_epochs - 1))
-    msg = net.load_state_dict(torch.load(snapshot))
-    print("self trained swin unet", msg)
-    snapshot_name = snapshot.split('/')[-1]
-
-    log_folder = './test_log/test_log_'
-    os.makedirs(log_folder, exist_ok=True)
-    logging.basicConfig(filename=log_folder + '/' + snapshot_name + ".txt", level=logging.INFO,
-                        format='[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S')
-    logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
-    logging.info(str(args))
-    logging.info(snapshot_name)
-
-    if args.is_savenii:
-        args.test_save_dir = os.path.join(args.output_dir, "predictions")
-        test_save_path = args.test_save_dir
-        os.makedirs(test_save_path, exist_ok=True)
-    else:
-        test_save_path = None
-    inference(args, net, test_save_path)
-
-# python train.py --dataset Synapse --cfg $CFG --root_path $DATA_DIR --max_epochs $EPOCH_TIME --output_dir $OUT_DIR --img_size $IMG_SIZE --base_lr $LEARNING_RATE --batch_size $BATCH_SIZE
-# python train.py --output_dir './model_out/datasets' --dataset datasets --img_size 224 --batch_size 32 --cfg configs/swin_tiny_patch4_window7_224_lite.yaml --root_path /media/aicvi/11111bdb-a0c7-4342-9791-36af7eb70fc0/NNUNET_OUTPUT/nnunet_preprocessed/Dataset001_mm/nnUNetPlans_2d_split
-# python test.py --output_dir ./model_out/datasets --dataset datasets --cfg configs/swin_tiny_patch4_window7_224_lite.yaml --is_saveni --root_path /media/aicvi/11111bdb-a0c7-4342-9791-36af7eb70fc0/NNUNET_OUTPUT/nnunet_preprocessed/Dataset001_mm/test --max_epoch 150 --base_lr 0.05 --img_size 224 --batch_size 24
+    run_inference()

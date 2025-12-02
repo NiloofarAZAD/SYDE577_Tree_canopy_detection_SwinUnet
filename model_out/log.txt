@@ -1,0 +1,1056 @@
+[10:45:13.002] Namespace(root_path='./datasets', dataset='Synapse', list_dir='./datasets/Synapse/lists', num_classes=3, output_dir='./model_out', max_iterations=30000, max_epochs=150, batch_size=16, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, cfg='configs/swin_tiny_patch4_window7_224_lite.yaml', opts=None, zip=False, cache_mode='part', resume=None, accumulation_steps=None, use_checkpoint=False, amp_opt_level='O1', tag=None, eval=False, throughput=False, n_class=3, num_workers=8, eval_interval=1)
+[10:45:13.018] 9 iterations per epoch. 1350 max iterations 
+[10:46:23.935] Namespace(root_path='./datasets', dataset='Synapse', list_dir='./datasets/Synapse/lists', num_classes=3, output_dir='./model_out', max_iterations=30000, max_epochs=150, batch_size=16, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, cfg='configs/swin_tiny_patch4_window7_224_lite.yaml', opts=None, zip=False, cache_mode='part', resume=None, accumulation_steps=None, use_checkpoint=False, amp_opt_level='O1', tag=None, eval=False, throughput=False, n_class=3, num_workers=0, eval_interval=1)
+[10:46:23.944] 9 iterations per epoch. 1350 max iterations 
+[10:49:51.580] Namespace(root_path='./datasets/Synapse', dataset='Synapse', list_dir='./datasets/Synapse/lists', num_classes=3, output_dir='./model_out', max_iterations=30000, max_epochs=150, batch_size=16, n_gpu=1, deterministic=1, base_lr=0.01, img_size=224, seed=1234, cfg='configs/swin_tiny_patch4_window7_224_lite.yaml', opts=None, zip=False, cache_mode='part', resume=None, accumulation_steps=None, use_checkpoint=False, amp_opt_level='O1', tag=None, eval=False, throughput=False, n_class=3, num_workers=0, eval_interval=1)
+[10:49:51.588] 9 iterations per epoch. 1350 max iterations 
+[10:51:03.522] Train epoch: 0 : loss : 0.706775, loss_ce: 0.903222, loss_dice: 0.575810, train_acc: 0.6229
+[10:51:10.895] Val epoch: 0 : loss : 0.701367, loss_ce: 0.836508, loss_dice: 0.611273
+[10:51:10.896] Val epoch 0: Pixel Accuracy = 0.6972
+[10:51:10.896]   Class 0 IoU = 0.6972
+[10:51:10.897]   Class 1 IoU = 0.0000
+[10:51:10.897]   Class 2 IoU = 0.0000
+[10:51:11.087] save model to ./model_out\best_model.pth
+[10:52:12.074] Train epoch: 1 : loss : 0.655272, loss_ce: 0.790411, loss_dice: 0.565179, train_acc: 0.7396
+[10:52:18.077] Val epoch: 1 : loss : 0.637732, loss_ce: 0.784358, loss_dice: 0.539982
+[10:52:18.078] Val epoch 1: Pixel Accuracy = 0.7030
+[10:52:18.078]   Class 0 IoU = 0.7030
+[10:52:18.079]   Class 1 IoU = 0.0000
+[10:52:18.079]   Class 2 IoU = 0.0000
+[10:52:18.257] save model to ./model_out\best_model.pth
+[10:53:19.436] Train epoch: 2 : loss : 0.634744, loss_ce: 0.757767, loss_dice: 0.552728, train_acc: 0.7379
+[10:53:24.654] Val epoch: 2 : loss : 0.650555, loss_ce: 0.800678, loss_dice: 0.550474
+[10:53:24.654] Val epoch 2: Pixel Accuracy = 0.6971
+[10:53:24.654]   Class 0 IoU = 0.6971
+[10:53:24.654]   Class 1 IoU = 0.0000
+[10:53:24.655]   Class 2 IoU = 0.0000
+[10:53:24.804] save model to ./model_out\last_model.pth
+[10:54:27.656] Train epoch: 3 : loss : 0.626700, loss_ce: 0.757368, loss_dice: 0.539588, train_acc: 0.7477
+[10:54:37.045] Val epoch: 3 : loss : 0.639261, loss_ce: 0.784776, loss_dice: 0.542251
+[10:54:37.045] Val epoch 3: Pixel Accuracy = 0.7025
+[10:54:37.046]   Class 0 IoU = 0.7025
+[10:54:37.046]   Class 1 IoU = 0.0000
+[10:54:37.046]   Class 2 IoU = 0.0000
+[10:54:37.333] save model to ./model_out\last_model.pth
+[10:56:19.269] Train epoch: 4 : loss : 0.624188, loss_ce: 0.739313, loss_dice: 0.547437, train_acc: 0.7385
+[10:56:29.219] Val epoch: 4 : loss : 0.638117, loss_ce: 0.771901, loss_dice: 0.548927
+[10:56:29.220] Val epoch 4: Pixel Accuracy = 0.7019
+[10:56:29.220]   Class 0 IoU = 0.7019
+[10:56:29.220]   Class 1 IoU = 0.0000
+[10:56:29.221]   Class 2 IoU = 0.0000
+[10:56:29.511] save model to ./model_out\last_model.pth
+[10:58:09.807] Train epoch: 5 : loss : 0.621808, loss_ce: 0.735049, loss_dice: 0.546315, train_acc: 0.7494
+[10:58:18.772] Val epoch: 5 : loss : 0.632853, loss_ce: 0.775628, loss_dice: 0.537669
+[10:58:18.772] Val epoch 5: Pixel Accuracy = 0.7036
+[10:58:18.773]   Class 0 IoU = 0.7036
+[10:58:18.773]   Class 1 IoU = 0.0000
+[10:58:18.773]   Class 2 IoU = 0.0000
+[10:58:19.059] save model to ./model_out\best_model.pth
+[10:59:27.268] Train epoch: 6 : loss : 0.618529, loss_ce: 0.729496, loss_dice: 0.544551, train_acc: 0.7491
+[10:59:33.649] Val epoch: 6 : loss : 0.636662, loss_ce: 0.778938, loss_dice: 0.541811
+[10:59:33.649] Val epoch 6: Pixel Accuracy = 0.7048
+[10:59:33.649]   Class 0 IoU = 0.7048
+[10:59:33.649]   Class 1 IoU = 0.0000
+[10:59:33.650]   Class 2 IoU = 0.0000
+[10:59:33.823] save model to ./model_out\last_model.pth
+[11:01:09.451] Train epoch: 7 : loss : 0.615998, loss_ce: 0.735277, loss_dice: 0.536479, train_acc: 0.7436
+[11:01:15.373] Val epoch: 7 : loss : 0.630051, loss_ce: 0.774032, loss_dice: 0.534064
+[11:01:15.374] Val epoch 7: Pixel Accuracy = 0.7029
+[11:01:15.374]   Class 0 IoU = 0.7029
+[11:01:15.375]   Class 1 IoU = 0.0000
+[11:01:15.375]   Class 2 IoU = 0.0000
+[11:01:15.594] save model to ./model_out\best_model.pth
+[11:02:32.493] Train epoch: 8 : loss : 0.604509, loss_ce: 0.716391, loss_dice: 0.529920, train_acc: 0.7434
+[11:02:40.440] Val epoch: 8 : loss : 0.612857, loss_ce: 0.765927, loss_dice: 0.510811
+[11:02:40.440] Val epoch 8: Pixel Accuracy = 0.6984
+[11:02:40.440]   Class 0 IoU = 0.6983
+[11:02:40.440]   Class 1 IoU = 0.0000
+[11:02:40.440]   Class 2 IoU = 0.0006
+[11:02:40.559] save model to ./model_out\best_model.pth
+[11:03:18.680] Train epoch: 9 : loss : 0.560886, loss_ce: 0.671228, loss_dice: 0.487325, train_acc: 0.7468
+[11:03:22.389] Val epoch: 9 : loss : 0.610920, loss_ce: 0.778259, loss_dice: 0.499360
+[11:03:22.389] Val epoch 9: Pixel Accuracy = 0.6385
+[11:03:22.389]   Class 0 IoU = 0.6114
+[11:03:22.389]   Class 1 IoU = 0.0071
+[11:03:22.389]   Class 2 IoU = 0.2448
+[11:03:22.502] save model to ./model_out\best_model.pth
+[11:04:02.912] Train epoch: 10 : loss : 0.618151, loss_ce: 0.739241, loss_dice: 0.537424, train_acc: 0.7094
+[11:04:06.789] Val epoch: 10 : loss : 0.663069, loss_ce: 0.890126, loss_dice: 0.511699
+[11:04:06.790] Val epoch 10: Pixel Accuracy = 0.6017
+[11:04:06.790]   Class 0 IoU = 0.5589
+[11:04:06.790]   Class 1 IoU = 0.0000
+[11:04:06.790]   Class 2 IoU = 0.2712
+[11:04:06.891] save model to ./model_out\last_model.pth
+[11:04:44.909] Train epoch: 11 : loss : 0.605203, loss_ce: 0.721386, loss_dice: 0.527747, train_acc: 0.7331
+[11:04:48.767] Val epoch: 11 : loss : 0.615376, loss_ce: 0.793712, loss_dice: 0.496486
+[11:04:48.767] Val epoch 11: Pixel Accuracy = 0.6986
+[11:04:48.767]   Class 0 IoU = 0.6982
+[11:04:48.767]   Class 1 IoU = 0.0000
+[11:04:48.767]   Class 2 IoU = 0.0073
+[11:04:48.876] save model to ./model_out\last_model.pth
+[11:05:27.597] Train epoch: 12 : loss : 0.570599, loss_ce: 0.683836, loss_dice: 0.495108, train_acc: 0.7425
+[11:05:32.178] Val epoch: 12 : loss : 0.590691, loss_ce: 0.763932, loss_dice: 0.475198
+[11:05:32.178] Val epoch 12: Pixel Accuracy = 0.6221
+[11:05:32.178]   Class 0 IoU = 0.5676
+[11:05:32.179]   Class 1 IoU = 0.0000
+[11:05:32.179]   Class 2 IoU = 0.3243
+[11:05:32.275] save model to ./model_out\best_model.pth
+[11:06:08.552] Train epoch: 13 : loss : 0.528492, loss_ce: 0.632773, loss_dice: 0.458972, train_acc: 0.7513
+[11:06:12.125] Val epoch: 13 : loss : 0.617981, loss_ce: 0.836295, loss_dice: 0.472438
+[11:06:12.125] Val epoch 13: Pixel Accuracy = 0.5819
+[11:06:12.125]   Class 0 IoU = 0.4992
+[11:06:12.125]   Class 1 IoU = 0.0000
+[11:06:12.125]   Class 2 IoU = 0.3446
+[11:06:12.241] save model to ./model_out\last_model.pth
+[11:06:53.337] Train epoch: 14 : loss : 0.511387, loss_ce: 0.620240, loss_dice: 0.438819, train_acc: 0.7518
+[11:06:57.323] Val epoch: 14 : loss : 0.595296, loss_ce: 0.791449, loss_dice: 0.464528
+[11:06:57.323] Val epoch 14: Pixel Accuracy = 0.6053
+[11:06:57.323]   Class 0 IoU = 0.5357
+[11:06:57.323]   Class 1 IoU = 0.0000
+[11:06:57.323]   Class 2 IoU = 0.3427
+[11:06:57.433] save model to ./model_out\last_model.pth
+[11:07:35.639] Train epoch: 15 : loss : 0.493658, loss_ce: 0.592415, loss_dice: 0.427820, train_acc: 0.7750
+[11:07:39.331] Val epoch: 15 : loss : 0.548426, loss_ce: 0.700967, loss_dice: 0.446731
+[11:07:39.331] Val epoch 15: Pixel Accuracy = 0.7350
+[11:07:39.331]   Class 0 IoU = 0.7169
+[11:07:39.331]   Class 1 IoU = 0.0000
+[11:07:39.331]   Class 2 IoU = 0.3791
+[11:07:39.440] save model to ./model_out\best_model.pth
+[11:08:18.710] Train epoch: 16 : loss : 0.481709, loss_ce: 0.569109, loss_dice: 0.423443, train_acc: 0.7926
+[11:08:22.453] Val epoch: 16 : loss : 0.524860, loss_ce: 0.686223, loss_dice: 0.417285
+[11:08:22.454] Val epoch 16: Pixel Accuracy = 0.7413
+[11:08:22.454]   Class 0 IoU = 0.7265
+[11:08:22.454]   Class 1 IoU = 0.0000
+[11:08:22.454]   Class 2 IoU = 0.4151
+[11:08:22.563] save model to ./model_out\best_model.pth
+[11:08:58.877] Train epoch: 17 : loss : 0.465319, loss_ce: 0.553768, loss_dice: 0.406352, train_acc: 0.8003
+[11:09:02.268] Val epoch: 17 : loss : 0.489608, loss_ce: 0.633070, loss_dice: 0.393967
+[11:09:02.268] Val epoch 17: Pixel Accuracy = 0.8031
+[11:09:02.268]   Class 0 IoU = 0.7942
+[11:09:02.268]   Class 1 IoU = 0.0000
+[11:09:02.268]   Class 2 IoU = 0.4913
+[11:09:02.377] save model to ./model_out\best_model.pth
+[11:09:41.091] Train epoch: 18 : loss : 0.451090, loss_ce: 0.541018, loss_dice: 0.391139, train_acc: 0.8090
+[11:09:44.458] Val epoch: 18 : loss : 0.492734, loss_ce: 0.637402, loss_dice: 0.396288
+[11:09:44.458] Val epoch 18: Pixel Accuracy = 0.8016
+[11:09:44.458]   Class 0 IoU = 0.7766
+[11:09:44.458]   Class 1 IoU = 0.0001
+[11:09:44.458]   Class 2 IoU = 0.4890
+[11:09:44.579] save model to ./model_out\last_model.pth
+[11:10:21.584] Train epoch: 19 : loss : 0.445660, loss_ce: 0.541978, loss_dice: 0.381449, train_acc: 0.8099
+[11:10:25.264] Val epoch: 19 : loss : 0.477165, loss_ce: 0.627371, loss_dice: 0.377028
+[11:10:25.265] Val epoch 19: Pixel Accuracy = 0.8053
+[11:10:25.265]   Class 0 IoU = 0.7924
+[11:10:25.265]   Class 1 IoU = 0.0079
+[11:10:25.265]   Class 2 IoU = 0.4808
+[11:10:25.382] save model to ./model_out\best_model.pth
+[11:11:03.554] Train epoch: 20 : loss : 0.437067, loss_ce: 0.529395, loss_dice: 0.375515, train_acc: 0.8157
+[11:11:09.067] Val epoch: 20 : loss : 0.473510, loss_ce: 0.619393, loss_dice: 0.376254
+[11:11:09.067] Val epoch 20: Pixel Accuracy = 0.8076
+[11:11:09.069]   Class 0 IoU = 0.8068
+[11:11:09.069]   Class 1 IoU = 0.0111
+[11:11:09.069]   Class 2 IoU = 0.4813
+[11:11:09.199] save model to ./model_out\best_model.pth
+[11:11:46.608] Train epoch: 21 : loss : 0.429536, loss_ce: 0.532358, loss_dice: 0.360988, train_acc: 0.8148
+[11:11:50.009] Val epoch: 21 : loss : 0.469502, loss_ce: 0.612724, loss_dice: 0.374020
+[11:11:50.009] Val epoch 21: Pixel Accuracy = 0.8095
+[11:11:50.009]   Class 0 IoU = 0.7979
+[11:11:50.009]   Class 1 IoU = 0.0477
+[11:11:50.009]   Class 2 IoU = 0.4899
+[11:11:50.122] save model to ./model_out\best_model.pth
+[11:12:31.616] Train epoch: 22 : loss : 0.419291, loss_ce: 0.508295, loss_dice: 0.359954, train_acc: 0.8203
+[11:12:35.639] Val epoch: 22 : loss : 0.488640, loss_ce: 0.626346, loss_dice: 0.396837
+[11:12:35.639] Val epoch 22: Pixel Accuracy = 0.7967
+[11:12:35.639]   Class 0 IoU = 0.7924
+[11:12:35.639]   Class 1 IoU = 0.0628
+[11:12:35.639]   Class 2 IoU = 0.4482
+[11:12:35.750] save model to ./model_out\last_model.pth
+[11:13:14.987] Train epoch: 23 : loss : 0.420862, loss_ce: 0.521592, loss_dice: 0.353708, train_acc: 0.8150
+[11:13:19.189] Val epoch: 23 : loss : 0.463667, loss_ce: 0.610358, loss_dice: 0.365873
+[11:13:19.189] Val epoch 23: Pixel Accuracy = 0.7978
+[11:13:19.189]   Class 0 IoU = 0.7938
+[11:13:19.189]   Class 1 IoU = 0.0790
+[11:13:19.189]   Class 2 IoU = 0.4908
+[11:13:19.302] save model to ./model_out\best_model.pth
+[11:13:57.545] Train epoch: 24 : loss : 0.409290, loss_ce: 0.507918, loss_dice: 0.343537, train_acc: 0.8102
+[11:14:01.592] Val epoch: 24 : loss : 0.436320, loss_ce: 0.580358, loss_dice: 0.340294
+[11:14:01.592] Val epoch 24: Pixel Accuracy = 0.7996
+[11:14:01.592]   Class 0 IoU = 0.7806
+[11:14:01.592]   Class 1 IoU = 0.2167
+[11:14:01.593]   Class 2 IoU = 0.5086
+[11:14:01.703] save model to ./model_out\best_model.pth
+[11:14:46.521] Train epoch: 25 : loss : 0.388046, loss_ce: 0.476669, loss_dice: 0.328963, train_acc: 0.8218
+[11:14:49.972] Val epoch: 25 : loss : 0.437554, loss_ce: 0.551902, loss_dice: 0.361323
+[11:14:49.972] Val epoch 25: Pixel Accuracy = 0.8176
+[11:14:49.972]   Class 0 IoU = 0.7934
+[11:14:49.972]   Class 1 IoU = 0.1249
+[11:14:49.972]   Class 2 IoU = 0.5219
+[11:14:50.186] save model to ./model_out\last_model.pth
+[11:15:27.006] Train epoch: 26 : loss : 0.375332, loss_ce: 0.478954, loss_dice: 0.306251, train_acc: 0.8203
+[11:15:30.364] Val epoch: 26 : loss : 0.405705, loss_ce: 0.523990, loss_dice: 0.326848
+[11:15:30.364] Val epoch 26: Pixel Accuracy = 0.8256
+[11:15:30.364]   Class 0 IoU = 0.8045
+[11:15:30.364]   Class 1 IoU = 0.2203
+[11:15:30.364]   Class 2 IoU = 0.5204
+[11:15:30.486] save model to ./model_out\best_model.pth
+[11:16:07.171] Train epoch: 27 : loss : 0.369672, loss_ce: 0.477020, loss_dice: 0.298106, train_acc: 0.8235
+[11:16:11.535] Val epoch: 27 : loss : 0.375313, loss_ce: 0.496326, loss_dice: 0.294637
+[11:16:11.535] Val epoch 27: Pixel Accuracy = 0.8310
+[11:16:11.535]   Class 0 IoU = 0.8072
+[11:16:11.536]   Class 1 IoU = 0.2816
+[11:16:11.536]   Class 2 IoU = 0.5455
+[11:16:11.642] save model to ./model_out\best_model.pth
+[11:16:51.201] Train epoch: 28 : loss : 0.364774, loss_ce: 0.462195, loss_dice: 0.299826, train_acc: 0.8238
+[11:16:54.734] Val epoch: 28 : loss : 0.364600, loss_ce: 0.508022, loss_dice: 0.268985
+[11:16:54.734] Val epoch 28: Pixel Accuracy = 0.8285
+[11:16:54.734]   Class 0 IoU = 0.8049
+[11:16:54.734]   Class 1 IoU = 0.3734
+[11:16:54.734]   Class 2 IoU = 0.5338
+[11:16:54.839] save model to ./model_out\best_model.pth
+[11:18:35.979] Train epoch: 29 : loss : 0.376565, loss_ce: 0.474935, loss_dice: 0.310985, train_acc: 0.8229
+[11:18:47.352] Val epoch: 29 : loss : 0.400588, loss_ce: 0.547893, loss_dice: 0.302384
+[11:18:47.353] Val epoch 29: Pixel Accuracy = 0.8046
+[11:18:47.353]   Class 0 IoU = 0.7838
+[11:18:47.354]   Class 1 IoU = 0.3075
+[11:18:47.354]   Class 2 IoU = 0.5100
+[11:18:47.635] save model to ./model_out\last_model.pth
+[11:19:55.459] Train epoch: 30 : loss : 0.365837, loss_ce: 0.460702, loss_dice: 0.302593, train_acc: 0.8264
+[11:19:59.267] Val epoch: 30 : loss : 0.358502, loss_ce: 0.489810, loss_dice: 0.270963
+[11:19:59.267] Val epoch 30: Pixel Accuracy = 0.8292
+[11:19:59.267]   Class 0 IoU = 0.8075
+[11:19:59.267]   Class 1 IoU = 0.3383
+[11:19:59.267]   Class 2 IoU = 0.5375
+[11:19:59.376] save model to ./model_out\best_model.pth
+[11:20:36.629] Train epoch: 31 : loss : 0.336839, loss_ce: 0.431358, loss_dice: 0.273827, train_acc: 0.8448
+[11:20:41.261] Val epoch: 31 : loss : 0.323863, loss_ce: 0.451002, loss_dice: 0.239105
+[11:20:41.261] Val epoch 31: Pixel Accuracy = 0.8469
+[11:20:41.261]   Class 0 IoU = 0.8288
+[11:20:41.261]   Class 1 IoU = 0.4541
+[11:20:41.261]   Class 2 IoU = 0.5358
+[11:20:41.369] save model to ./model_out\best_model.pth
+[11:21:52.768] Train epoch: 32 : loss : 0.338285, loss_ce: 0.441108, loss_dice: 0.269737, train_acc: 0.8376
+[11:22:05.285] Val epoch: 32 : loss : 0.352409, loss_ce: 0.478277, loss_dice: 0.268496
+[11:22:05.286] Val epoch 32: Pixel Accuracy = 0.8408
+[11:22:05.286]   Class 0 IoU = 0.8186
+[11:22:05.287]   Class 1 IoU = 0.3556
+[11:22:05.287]   Class 2 IoU = 0.5326
+[11:22:05.598] save model to ./model_out\last_model.pth
+[11:22:46.625] Train epoch: 33 : loss : 0.335983, loss_ce: 0.438897, loss_dice: 0.267374, train_acc: 0.8426
+[11:22:50.425] Val epoch: 33 : loss : 0.372049, loss_ce: 0.522580, loss_dice: 0.271695
+[11:22:50.425] Val epoch 33: Pixel Accuracy = 0.8197
+[11:22:50.425]   Class 0 IoU = 0.8097
+[11:22:50.425]   Class 1 IoU = 0.3899
+[11:22:50.425]   Class 2 IoU = 0.4612
+[11:22:50.529] save model to ./model_out\last_model.pth
+[11:23:28.412] Train epoch: 34 : loss : 0.341989, loss_ce: 0.441777, loss_dice: 0.275463, train_acc: 0.8387
+[11:23:33.006] Val epoch: 34 : loss : 0.313959, loss_ce: 0.450420, loss_dice: 0.222986
+[11:23:33.006] Val epoch 34: Pixel Accuracy = 0.8485
+[11:23:33.006]   Class 0 IoU = 0.8265
+[11:23:33.006]   Class 1 IoU = 0.4796
+[11:23:33.006]   Class 2 IoU = 0.5448
+[11:23:33.112] save model to ./model_out\best_model.pth
+[11:24:11.581] Train epoch: 35 : loss : 0.315657, loss_ce: 0.419124, loss_dice: 0.246679, train_acc: 0.8482
+[11:24:15.993] Val epoch: 35 : loss : 0.339172, loss_ce: 0.477223, loss_dice: 0.247137
+[11:24:15.993] Val epoch 35: Pixel Accuracy = 0.8299
+[11:24:15.994]   Class 0 IoU = 0.8103
+[11:24:15.994]   Class 1 IoU = 0.3882
+[11:24:15.994]   Class 2 IoU = 0.5368
+[11:24:16.093] save model to ./model_out\last_model.pth
+[11:24:57.793] Train epoch: 36 : loss : 0.327210, loss_ce: 0.421091, loss_dice: 0.264622, train_acc: 0.8478
+[11:25:00.976] Val epoch: 36 : loss : 0.320310, loss_ce: 0.453594, loss_dice: 0.231454
+[11:25:00.977] Val epoch 36: Pixel Accuracy = 0.8417
+[11:25:00.977]   Class 0 IoU = 0.8207
+[11:25:00.977]   Class 1 IoU = 0.4267
+[11:25:00.977]   Class 2 IoU = 0.5463
+[11:25:01.084] save model to ./model_out\last_model.pth
+[11:26:23.028] Train epoch: 37 : loss : 0.316114, loss_ce: 0.411694, loss_dice: 0.252394, train_acc: 0.8515
+[11:26:33.831] Val epoch: 37 : loss : 0.319013, loss_ce: 0.465227, loss_dice: 0.221536
+[11:26:33.831] Val epoch 37: Pixel Accuracy = 0.8390
+[11:26:33.832]   Class 0 IoU = 0.8214
+[11:26:33.833]   Class 1 IoU = 0.4591
+[11:26:33.833]   Class 2 IoU = 0.5391
+[11:26:34.137] save model to ./model_out\last_model.pth
+[11:28:28.015] Train epoch: 38 : loss : 0.316964, loss_ce: 0.412798, loss_dice: 0.253074, train_acc: 0.8506
+[11:28:40.365] Val epoch: 38 : loss : 0.317089, loss_ce: 0.450440, loss_dice: 0.228189
+[11:28:40.366] Val epoch 38: Pixel Accuracy = 0.8468
+[11:28:40.367]   Class 0 IoU = 0.8249
+[11:28:40.367]   Class 1 IoU = 0.4380
+[11:28:40.368]   Class 2 IoU = 0.5411
+[11:28:40.631] save model to ./model_out\last_model.pth
+[11:30:40.196] Train epoch: 39 : loss : 0.317822, loss_ce: 0.406223, loss_dice: 0.258888, train_acc: 0.8544
+[11:30:50.532] Val epoch: 39 : loss : 0.316915, loss_ce: 0.455338, loss_dice: 0.224633
+[11:30:50.533] Val epoch 39: Pixel Accuracy = 0.8413
+[11:30:50.534]   Class 0 IoU = 0.8247
+[11:30:50.534]   Class 1 IoU = 0.4494
+[11:30:50.535]   Class 2 IoU = 0.5353
+[11:30:50.822] save model to ./model_out\last_model.pth
+[11:32:39.712] Train epoch: 40 : loss : 0.316124, loss_ce: 0.410344, loss_dice: 0.253312, train_acc: 0.8496
+[11:32:51.498] Val epoch: 40 : loss : 0.341938, loss_ce: 0.482482, loss_dice: 0.248242
+[11:32:51.499] Val epoch 40: Pixel Accuracy = 0.8395
+[11:32:51.500]   Class 0 IoU = 0.8171
+[11:32:51.500]   Class 1 IoU = 0.4098
+[11:32:51.501]   Class 2 IoU = 0.5128
+[11:32:51.880] save model to ./model_out\last_model.pth
+[11:33:51.022] Train epoch: 41 : loss : 0.307499, loss_ce: 0.404703, loss_dice: 0.242696, train_acc: 0.8540
+[11:33:54.424] Val epoch: 41 : loss : 0.337082, loss_ce: 0.483325, loss_dice: 0.239587
+[11:33:54.424] Val epoch 41: Pixel Accuracy = 0.8343
+[11:33:54.424]   Class 0 IoU = 0.8205
+[11:33:54.424]   Class 1 IoU = 0.4131
+[11:33:54.424]   Class 2 IoU = 0.5325
+[11:33:54.529] save model to ./model_out\last_model.pth
+[11:35:48.299] Train epoch: 42 : loss : 0.319453, loss_ce: 0.398998, loss_dice: 0.266423, train_acc: 0.8563
+[11:35:51.510] Val epoch: 42 : loss : 0.307703, loss_ce: 0.440436, loss_dice: 0.219214
+[11:35:51.510] Val epoch 42: Pixel Accuracy = 0.8458
+[11:35:51.510]   Class 0 IoU = 0.8257
+[11:35:51.510]   Class 1 IoU = 0.4724
+[11:35:51.510]   Class 2 IoU = 0.5330
+[11:35:51.614] save model to ./model_out\best_model.pth
+[11:36:29.628] Train epoch: 43 : loss : 0.315705, loss_ce: 0.412017, loss_dice: 0.251496, train_acc: 0.8520
+[11:36:33.361] Val epoch: 43 : loss : 0.313642, loss_ce: 0.445502, loss_dice: 0.225735
+[11:36:33.361] Val epoch 43: Pixel Accuracy = 0.8399
+[11:36:33.361]   Class 0 IoU = 0.8215
+[11:36:33.361]   Class 1 IoU = 0.4345
+[11:36:33.362]   Class 2 IoU = 0.5373
+[11:36:33.473] save model to ./model_out\last_model.pth
+[11:37:10.538] Train epoch: 44 : loss : 0.309447, loss_ce: 0.401248, loss_dice: 0.248245, train_acc: 0.8540
+[11:37:13.936] Val epoch: 44 : loss : 0.316384, loss_ce: 0.447524, loss_dice: 0.228957
+[11:37:13.937] Val epoch 44: Pixel Accuracy = 0.8444
+[11:37:13.937]   Class 0 IoU = 0.8246
+[11:37:13.937]   Class 1 IoU = 0.4529
+[11:37:13.937]   Class 2 IoU = 0.5198
+[11:37:14.052] save model to ./model_out\last_model.pth
+[11:37:52.844] Train epoch: 45 : loss : 0.315640, loss_ce: 0.415264, loss_dice: 0.249225, train_acc: 0.8493
+[11:37:56.537] Val epoch: 45 : loss : 0.326715, loss_ce: 0.454285, loss_dice: 0.241668
+[11:37:56.537] Val epoch 45: Pixel Accuracy = 0.8408
+[11:37:56.537]   Class 0 IoU = 0.8183
+[11:37:56.537]   Class 1 IoU = 0.4022
+[11:37:56.537]   Class 2 IoU = 0.5288
+[11:37:56.642] save model to ./model_out\last_model.pth
+[11:38:36.243] Train epoch: 46 : loss : 0.309501, loss_ce: 0.413851, loss_dice: 0.239935, train_acc: 0.8503
+[11:38:40.319] Val epoch: 46 : loss : 0.324623, loss_ce: 0.465270, loss_dice: 0.230859
+[11:38:40.320] Val epoch 46: Pixel Accuracy = 0.8320
+[11:38:40.320]   Class 0 IoU = 0.8160
+[11:38:40.320]   Class 1 IoU = 0.4100
+[11:38:40.320]   Class 2 IoU = 0.5414
+[11:38:40.429] save model to ./model_out\last_model.pth
+[11:39:18.631] Train epoch: 47 : loss : 0.303533, loss_ce: 0.404551, loss_dice: 0.236188, train_acc: 0.8515
+[11:39:22.913] Val epoch: 47 : loss : 0.315631, loss_ce: 0.447680, loss_dice: 0.227597
+[11:39:22.913] Val epoch 47: Pixel Accuracy = 0.8407
+[11:39:22.913]   Class 0 IoU = 0.8186
+[11:39:22.913]   Class 1 IoU = 0.4395
+[11:39:22.913]   Class 2 IoU = 0.5361
+[11:39:23.019] save model to ./model_out\last_model.pth
+[11:40:01.501] Train epoch: 48 : loss : 0.301745, loss_ce: 0.391556, loss_dice: 0.241872, train_acc: 0.8592
+[11:40:04.901] Val epoch: 48 : loss : 0.302149, loss_ce: 0.441263, loss_dice: 0.209405
+[11:40:04.901] Val epoch 48: Pixel Accuracy = 0.8488
+[11:40:04.901]   Class 0 IoU = 0.8290
+[11:40:04.901]   Class 1 IoU = 0.5001
+[11:40:04.901]   Class 2 IoU = 0.5316
+[11:40:05.009] save model to ./model_out\best_model.pth
+[11:40:45.142] Train epoch: 49 : loss : 0.300116, loss_ce: 0.392210, loss_dice: 0.238719, train_acc: 0.8590
+[11:40:48.273] Val epoch: 49 : loss : 0.326112, loss_ce: 0.468175, loss_dice: 0.231403
+[11:40:48.273] Val epoch 49: Pixel Accuracy = 0.8363
+[11:40:48.274]   Class 0 IoU = 0.8230
+[11:40:48.274]   Class 1 IoU = 0.4553
+[11:40:48.274]   Class 2 IoU = 0.4921
+[11:40:48.381] save model to ./model_out\last_model.pth
+[11:41:26.478] Train epoch: 50 : loss : 0.302065, loss_ce: 0.389026, loss_dice: 0.244091, train_acc: 0.8577
+[11:41:31.466] Val epoch: 50 : loss : 0.304192, loss_ce: 0.424440, loss_dice: 0.224027
+[11:41:31.466] Val epoch 50: Pixel Accuracy = 0.8474
+[11:41:31.466]   Class 0 IoU = 0.8330
+[11:41:31.466]   Class 1 IoU = 0.4309
+[11:41:31.466]   Class 2 IoU = 0.5293
+[11:41:31.574] save model to ./model_out\last_model.pth
+[11:42:10.847] Train epoch: 51 : loss : 0.295920, loss_ce: 0.391538, loss_dice: 0.232175, train_acc: 0.8565
+[11:42:15.443] Val epoch: 51 : loss : 0.296262, loss_ce: 0.428213, loss_dice: 0.208295
+[11:42:15.443] Val epoch 51: Pixel Accuracy = 0.8445
+[11:42:15.443]   Class 0 IoU = 0.8280
+[11:42:15.444]   Class 1 IoU = 0.4666
+[11:42:15.444]   Class 2 IoU = 0.5442
+[11:42:15.553] save model to ./model_out\best_model.pth
+[11:42:53.636] Train epoch: 52 : loss : 0.290241, loss_ce: 0.386789, loss_dice: 0.225876, train_acc: 0.8600
+[11:42:58.023] Val epoch: 52 : loss : 0.302458, loss_ce: 0.431736, loss_dice: 0.216273
+[11:42:58.023] Val epoch 52: Pixel Accuracy = 0.8448
+[11:42:58.023]   Class 0 IoU = 0.8304
+[11:42:58.023]   Class 1 IoU = 0.4598
+[11:42:58.023]   Class 2 IoU = 0.5226
+[11:42:58.130] save model to ./model_out\last_model.pth
+[11:43:37.430] Train epoch: 53 : loss : 0.294897, loss_ce: 0.394225, loss_dice: 0.228678, train_acc: 0.8539
+[11:43:41.217] Val epoch: 53 : loss : 0.305095, loss_ce: 0.437480, loss_dice: 0.216839
+[11:43:41.217] Val epoch 53: Pixel Accuracy = 0.8471
+[11:43:41.217]   Class 0 IoU = 0.8305
+[11:43:41.218]   Class 1 IoU = 0.4694
+[11:43:41.218]   Class 2 IoU = 0.5269
+[11:43:41.331] save model to ./model_out\last_model.pth
+[11:44:20.831] Train epoch: 54 : loss : 0.306853, loss_ce: 0.397205, loss_dice: 0.246618, train_acc: 0.8538
+[11:44:24.790] Val epoch: 54 : loss : 0.310763, loss_ce: 0.442344, loss_dice: 0.223043
+[11:44:24.790] Val epoch 54: Pixel Accuracy = 0.8413
+[11:44:24.790]   Class 0 IoU = 0.8205
+[11:44:24.791]   Class 1 IoU = 0.4577
+[11:44:24.791]   Class 2 IoU = 0.5148
+[11:44:24.899] save model to ./model_out\last_model.pth
+[11:45:09.276] Train epoch: 55 : loss : 0.295067, loss_ce: 0.383550, loss_dice: 0.236078, train_acc: 0.8611
+[11:45:13.581] Val epoch: 55 : loss : 0.302171, loss_ce: 0.432957, loss_dice: 0.214981
+[11:45:13.582] Val epoch 55: Pixel Accuracy = 0.8434
+[11:45:13.582]   Class 0 IoU = 0.8295
+[11:45:13.582]   Class 1 IoU = 0.4539
+[11:45:13.582]   Class 2 IoU = 0.5398
+[11:45:13.693] save model to ./model_out\last_model.pth
+[11:45:50.387] Train epoch: 56 : loss : 0.289920, loss_ce: 0.384286, loss_dice: 0.227010, train_acc: 0.8584
+[11:45:54.572] Val epoch: 56 : loss : 0.300613, loss_ce: 0.431014, loss_dice: 0.213680
+[11:45:54.572] Val epoch 56: Pixel Accuracy = 0.8470
+[11:45:54.573]   Class 0 IoU = 0.8299
+[11:45:54.573]   Class 1 IoU = 0.4827
+[11:45:54.573]   Class 2 IoU = 0.5287
+[11:45:54.680] save model to ./model_out\last_model.pth
+[11:46:35.591] Train epoch: 57 : loss : 0.291255, loss_ce: 0.378226, loss_dice: 0.233275, train_acc: 0.8612
+[11:46:39.568] Val epoch: 57 : loss : 0.302835, loss_ce: 0.431288, loss_dice: 0.217200
+[11:46:39.568] Val epoch 57: Pixel Accuracy = 0.8488
+[11:46:39.568]   Class 0 IoU = 0.8311
+[11:46:39.568]   Class 1 IoU = 0.4797
+[11:46:39.568]   Class 2 IoU = 0.5166
+[11:46:39.675] save model to ./model_out\last_model.pth
+[11:47:17.332] Train epoch: 58 : loss : 0.297798, loss_ce: 0.386671, loss_dice: 0.238549, train_acc: 0.8570
+[11:47:20.967] Val epoch: 58 : loss : 0.303047, loss_ce: 0.431517, loss_dice: 0.217400
+[11:47:20.967] Val epoch 58: Pixel Accuracy = 0.8479
+[11:47:20.968]   Class 0 IoU = 0.8292
+[11:47:20.968]   Class 1 IoU = 0.4857
+[11:47:20.968]   Class 2 IoU = 0.5161
+[11:47:21.078] save model to ./model_out\last_model.pth
+[11:47:58.702] Train epoch: 59 : loss : 0.301051, loss_ce: 0.386730, loss_dice: 0.243932, train_acc: 0.8575
+[11:48:03.333] Val epoch: 59 : loss : 0.315028, loss_ce: 0.446698, loss_dice: 0.227247
+[11:48:03.333] Val epoch 59: Pixel Accuracy = 0.8453
+[11:48:03.333]   Class 0 IoU = 0.8313
+[11:48:03.334]   Class 1 IoU = 0.4367
+[11:48:03.334]   Class 2 IoU = 0.5260
+[11:48:03.441] save model to ./model_out\last_model.pth
+[11:48:39.976] Train epoch: 60 : loss : 0.289982, loss_ce: 0.381815, loss_dice: 0.228759, train_acc: 0.8588
+[11:48:43.721] Val epoch: 60 : loss : 0.313993, loss_ce: 0.450012, loss_dice: 0.223314
+[11:48:43.722] Val epoch 60: Pixel Accuracy = 0.8380
+[11:48:43.722]   Class 0 IoU = 0.8253
+[11:48:43.722]   Class 1 IoU = 0.4593
+[11:48:43.722]   Class 2 IoU = 0.5125
+[11:48:43.828] save model to ./model_out\last_model.pth
+[11:49:23.426] Train epoch: 61 : loss : 0.291199, loss_ce: 0.383868, loss_dice: 0.229419, train_acc: 0.8604
+[11:49:27.122] Val epoch: 61 : loss : 0.298567, loss_ce: 0.428889, loss_dice: 0.211686
+[11:49:27.122] Val epoch 61: Pixel Accuracy = 0.8441
+[11:49:27.122]   Class 0 IoU = 0.8261
+[11:49:27.122]   Class 1 IoU = 0.4795
+[11:49:27.122]   Class 2 IoU = 0.5336
+[11:49:27.226] save model to ./model_out\last_model.pth
+[11:50:06.250] Train epoch: 62 : loss : 0.290000, loss_ce: 0.384358, loss_dice: 0.227094, train_acc: 0.8576
+[11:50:10.888] Val epoch: 62 : loss : 0.324193, loss_ce: 0.456913, loss_dice: 0.235712
+[11:50:10.888] Val epoch 62: Pixel Accuracy = 0.8425
+[11:50:10.888]   Class 0 IoU = 0.8298
+[11:50:10.888]   Class 1 IoU = 0.4265
+[11:50:10.888]   Class 2 IoU = 0.5094
+[11:50:10.997] save model to ./model_out\last_model.pth
+[11:50:49.288] Train epoch: 63 : loss : 0.301598, loss_ce: 0.379925, loss_dice: 0.249380, train_acc: 0.8609
+[11:50:52.687] Val epoch: 63 : loss : 0.287661, loss_ce: 0.412649, loss_dice: 0.204335
+[11:50:52.688] Val epoch 63: Pixel Accuracy = 0.8496
+[11:50:52.688]   Class 0 IoU = 0.8305
+[11:50:52.688]   Class 1 IoU = 0.5022
+[11:50:52.688]   Class 2 IoU = 0.5394
+[11:50:52.794] save model to ./model_out\best_model.pth
+[11:51:30.865] Train epoch: 64 : loss : 0.296116, loss_ce: 0.376138, loss_dice: 0.242768, train_acc: 0.8609
+[11:51:34.873] Val epoch: 64 : loss : 0.286759, loss_ce: 0.409879, loss_dice: 0.204679
+[11:51:34.873] Val epoch 64: Pixel Accuracy = 0.8524
+[11:51:34.874]   Class 0 IoU = 0.8341
+[11:51:34.874]   Class 1 IoU = 0.4993
+[11:51:34.874]   Class 2 IoU = 0.5505
+[11:51:34.980] save model to ./model_out\best_model.pth
+[11:52:10.960] Train epoch: 65 : loss : 0.281871, loss_ce: 0.372834, loss_dice: 0.221230, train_acc: 0.8634
+[11:52:13.822] Val epoch: 65 : loss : 0.311075, loss_ce: 0.448122, loss_dice: 0.219711
+[11:52:13.822] Val epoch 65: Pixel Accuracy = 0.8413
+[11:52:13.823]   Class 0 IoU = 0.8275
+[11:52:13.823]   Class 1 IoU = 0.4591
+[11:52:13.823]   Class 2 IoU = 0.5323
+[11:52:13.927] save model to ./model_out\last_model.pth
+[11:52:52.132] Train epoch: 66 : loss : 0.276378, loss_ce: 0.366755, loss_dice: 0.216127, train_acc: 0.8662
+[11:52:55.590] Val epoch: 66 : loss : 0.317587, loss_ce: 0.452218, loss_dice: 0.227833
+[11:52:55.590] Val epoch 66: Pixel Accuracy = 0.8405
+[11:52:55.590]   Class 0 IoU = 0.8277
+[11:52:55.591]   Class 1 IoU = 0.4502
+[11:52:55.591]   Class 2 IoU = 0.5137
+[11:52:55.695] save model to ./model_out\last_model.pth
+[11:53:58.704] Train epoch: 67 : loss : 0.288936, loss_ce: 0.368511, loss_dice: 0.235886, train_acc: 0.8634
+[11:54:10.460] Val epoch: 67 : loss : 0.283328, loss_ce: 0.412859, loss_dice: 0.196974
+[11:54:10.461] Val epoch 67: Pixel Accuracy = 0.8518
+[11:54:10.461]   Class 0 IoU = 0.8328
+[11:54:10.462]   Class 1 IoU = 0.5373
+[11:54:10.462]   Class 2 IoU = 0.5386
+[11:54:10.702] save model to ./model_out\best_model.pth
+[11:56:12.646] Train epoch: 68 : loss : 0.282057, loss_ce: 0.381874, loss_dice: 0.215512, train_acc: 0.8599
+[11:56:25.028] Val epoch: 68 : loss : 0.310584, loss_ce: 0.445514, loss_dice: 0.220631
+[11:56:25.030] Val epoch 68: Pixel Accuracy = 0.8475
+[11:56:25.030]   Class 0 IoU = 0.8342
+[11:56:25.031]   Class 1 IoU = 0.4827
+[11:56:25.031]   Class 2 IoU = 0.5074
+[11:56:25.344] save model to ./model_out\last_model.pth
+[11:58:25.812] Train epoch: 69 : loss : 0.280553, loss_ce: 0.379329, loss_dice: 0.214702, train_acc: 0.8614
+[11:58:38.183] Val epoch: 69 : loss : 0.298864, loss_ce: 0.426831, loss_dice: 0.213553
+[11:58:38.184] Val epoch 69: Pixel Accuracy = 0.8447
+[11:58:38.185]   Class 0 IoU = 0.8273
+[11:58:38.185]   Class 1 IoU = 0.4629
+[11:58:38.186]   Class 2 IoU = 0.5321
+[11:58:38.450] save model to ./model_out\last_model.pth
+[12:00:37.776] Train epoch: 70 : loss : 0.283828, loss_ce: 0.362880, loss_dice: 0.231127, train_acc: 0.8677
+[12:00:50.137] Val epoch: 70 : loss : 0.284890, loss_ce: 0.409649, loss_dice: 0.201718
+[12:00:50.138] Val epoch 70: Pixel Accuracy = 0.8528
+[12:00:50.139]   Class 0 IoU = 0.8319
+[12:00:50.140]   Class 1 IoU = 0.5017
+[12:00:50.140]   Class 2 IoU = 0.5549
+[12:00:50.564] save model to ./model_out\last_model.pth
+[12:02:44.520] Train epoch: 71 : loss : 0.282083, loss_ce: 0.370845, loss_dice: 0.222909, train_acc: 0.8639
+[12:02:57.112] Val epoch: 71 : loss : 0.303997, loss_ce: 0.423292, loss_dice: 0.224466
+[12:02:57.113] Val epoch 71: Pixel Accuracy = 0.8461
+[12:02:57.114]   Class 0 IoU = 0.8308
+[12:02:57.114]   Class 1 IoU = 0.4234
+[12:02:57.124]   Class 2 IoU = 0.5365
+[12:02:57.459] save model to ./model_out\last_model.pth
+[12:05:00.674] Train epoch: 72 : loss : 0.273624, loss_ce: 0.364207, loss_dice: 0.213235, train_acc: 0.8659
+[12:05:11.864] Val epoch: 72 : loss : 0.290808, loss_ce: 0.420543, loss_dice: 0.204318
+[12:05:11.864] Val epoch 72: Pixel Accuracy = 0.8496
+[12:05:11.865]   Class 0 IoU = 0.8307
+[12:05:11.866]   Class 1 IoU = 0.5032
+[12:05:11.867]   Class 2 IoU = 0.5380
+[12:05:12.195] save model to ./model_out\last_model.pth
+[12:06:06.848] Train epoch: 73 : loss : 0.277035, loss_ce: 0.369936, loss_dice: 0.215101, train_acc: 0.8636
+[12:06:11.171] Val epoch: 73 : loss : 0.297593, loss_ce: 0.422462, loss_dice: 0.214348
+[12:06:11.171] Val epoch 73: Pixel Accuracy = 0.8472
+[12:06:11.171]   Class 0 IoU = 0.8322
+[12:06:11.171]   Class 1 IoU = 0.4726
+[12:06:11.171]   Class 2 IoU = 0.5305
+[12:06:11.278] save model to ./model_out\last_model.pth
+[12:06:48.990] Train epoch: 74 : loss : 0.273502, loss_ce: 0.357222, loss_dice: 0.217688, train_acc: 0.8686
+[12:06:52.765] Val epoch: 74 : loss : 0.312888, loss_ce: 0.443574, loss_dice: 0.225764
+[12:06:52.765] Val epoch 74: Pixel Accuracy = 0.8380
+[12:06:52.765]   Class 0 IoU = 0.8263
+[12:06:52.765]   Class 1 IoU = 0.4303
+[12:06:52.765]   Class 2 IoU = 0.5275
+[12:06:52.871] save model to ./model_out\last_model.pth
+[12:07:30.572] Train epoch: 75 : loss : 0.279369, loss_ce: 0.369183, loss_dice: 0.219494, train_acc: 0.8632
+[12:07:34.556] Val epoch: 75 : loss : 0.335393, loss_ce: 0.475603, loss_dice: 0.241920
+[12:07:34.556] Val epoch 75: Pixel Accuracy = 0.8321
+[12:07:34.557]   Class 0 IoU = 0.8220
+[12:07:34.557]   Class 1 IoU = 0.4040
+[12:07:34.557]   Class 2 IoU = 0.5238
+[12:07:34.666] save model to ./model_out\last_model.pth
+[12:08:13.744] Train epoch: 76 : loss : 0.282155, loss_ce: 0.375143, loss_dice: 0.220162, train_acc: 0.8615
+[12:08:17.538] Val epoch: 76 : loss : 0.293674, loss_ce: 0.422125, loss_dice: 0.208041
+[12:08:17.538] Val epoch 76: Pixel Accuracy = 0.8427
+[12:08:17.538]   Class 0 IoU = 0.8253
+[12:08:17.538]   Class 1 IoU = 0.4707
+[12:08:17.538]   Class 2 IoU = 0.5375
+[12:08:17.649] save model to ./model_out\last_model.pth
+[12:08:54.604] Train epoch: 77 : loss : 0.288093, loss_ce: 0.367005, loss_dice: 0.235485, train_acc: 0.8634
+[12:08:58.922] Val epoch: 77 : loss : 0.294912, loss_ce: 0.420666, loss_dice: 0.211077
+[12:08:58.923] Val epoch 77: Pixel Accuracy = 0.8441
+[12:08:58.923]   Class 0 IoU = 0.8282
+[12:08:58.923]   Class 1 IoU = 0.4588
+[12:08:58.924]   Class 2 IoU = 0.5467
+[12:08:59.030] save model to ./model_out\last_model.pth
+[12:09:37.384] Train epoch: 78 : loss : 0.276562, loss_ce: 0.359480, loss_dice: 0.221284, train_acc: 0.8679
+[12:09:42.117] Val epoch: 78 : loss : 0.311172, loss_ce: 0.440748, loss_dice: 0.224788
+[12:09:42.117] Val epoch 78: Pixel Accuracy = 0.8387
+[12:09:42.117]   Class 0 IoU = 0.8281
+[12:09:42.117]   Class 1 IoU = 0.4385
+[12:09:42.117]   Class 2 IoU = 0.5277
+[12:09:42.219] save model to ./model_out\last_model.pth
+[12:10:20.005] Train epoch: 79 : loss : 0.268321, loss_ce: 0.357463, loss_dice: 0.208892, train_acc: 0.8674
+[12:10:23.306] Val epoch: 79 : loss : 0.291577, loss_ce: 0.416571, loss_dice: 0.208248
+[12:10:23.306] Val epoch 79: Pixel Accuracy = 0.8470
+[12:10:23.306]   Class 0 IoU = 0.8313
+[12:10:23.306]   Class 1 IoU = 0.4791
+[12:10:23.306]   Class 2 IoU = 0.5386
+[12:10:23.410] save model to ./model_out\last_model.pth
+[12:11:02.014] Train epoch: 80 : loss : 0.274836, loss_ce: 0.369903, loss_dice: 0.211457, train_acc: 0.8639
+[12:11:06.506] Val epoch: 80 : loss : 0.305445, loss_ce: 0.431743, loss_dice: 0.221247
+[12:11:06.506] Val epoch 80: Pixel Accuracy = 0.8467
+[12:11:06.506]   Class 0 IoU = 0.8312
+[12:11:06.506]   Class 1 IoU = 0.4396
+[12:11:06.506]   Class 2 IoU = 0.5382
+[12:11:06.613] save model to ./model_out\last_model.pth
+[12:11:45.542] Train epoch: 81 : loss : 0.276016, loss_ce: 0.360506, loss_dice: 0.219689, train_acc: 0.8656
+[12:11:49.699] Val epoch: 81 : loss : 0.308746, loss_ce: 0.436643, loss_dice: 0.223480
+[12:11:49.699] Val epoch 81: Pixel Accuracy = 0.8447
+[12:11:49.700]   Class 0 IoU = 0.8332
+[12:11:49.700]   Class 1 IoU = 0.4658
+[12:11:49.700]   Class 2 IoU = 0.5022
+[12:11:49.809] save model to ./model_out\last_model.pth
+[12:12:27.105] Train epoch: 82 : loss : 0.269170, loss_ce: 0.356273, loss_dice: 0.211101, train_acc: 0.8687
+[12:12:30.674] Val epoch: 82 : loss : 0.305400, loss_ce: 0.434754, loss_dice: 0.219164
+[12:12:30.674] Val epoch 82: Pixel Accuracy = 0.8437
+[12:12:30.674]   Class 0 IoU = 0.8300
+[12:12:30.674]   Class 1 IoU = 0.4475
+[12:12:30.674]   Class 2 IoU = 0.5439
+[12:12:30.779] save model to ./model_out\last_model.pth
+[12:13:09.806] Train epoch: 83 : loss : 0.274627, loss_ce: 0.355967, loss_dice: 0.220401, train_acc: 0.8683
+[12:13:13.829] Val epoch: 83 : loss : 0.321342, loss_ce: 0.451883, loss_dice: 0.234314
+[12:13:13.829] Val epoch 83: Pixel Accuracy = 0.8373
+[12:13:13.829]   Class 0 IoU = 0.8287
+[12:13:13.830]   Class 1 IoU = 0.4209
+[12:13:13.830]   Class 2 IoU = 0.5150
+[12:13:13.939] save model to ./model_out\last_model.pth
+[12:13:51.475] Train epoch: 84 : loss : 0.271394, loss_ce: 0.360425, loss_dice: 0.212041, train_acc: 0.8669
+[12:13:55.441] Val epoch: 84 : loss : 0.301506, loss_ce: 0.425095, loss_dice: 0.219114
+[12:13:55.441] Val epoch 84: Pixel Accuracy = 0.8451
+[12:13:55.441]   Class 0 IoU = 0.8350
+[12:13:55.441]   Class 1 IoU = 0.4445
+[12:13:55.442]   Class 2 IoU = 0.5351
+[12:13:55.549] save model to ./model_out\last_model.pth
+[12:14:32.023] Train epoch: 85 : loss : 0.258889, loss_ce: 0.347265, loss_dice: 0.199972, train_acc: 0.8703
+[12:14:36.016] Val epoch: 85 : loss : 0.289442, loss_ce: 0.412828, loss_dice: 0.207184
+[12:14:36.016] Val epoch 85: Pixel Accuracy = 0.8484
+[12:14:36.017]   Class 0 IoU = 0.8343
+[12:14:36.017]   Class 1 IoU = 0.4811
+[12:14:36.017]   Class 2 IoU = 0.5411
+[12:14:36.126] save model to ./model_out\last_model.pth
+[12:15:13.245] Train epoch: 86 : loss : 0.267641, loss_ce: 0.358076, loss_dice: 0.207351, train_acc: 0.8668
+[12:15:17.001] Val epoch: 86 : loss : 0.283891, loss_ce: 0.405671, loss_dice: 0.202704
+[12:15:17.001] Val epoch 86: Pixel Accuracy = 0.8551
+[12:15:17.001]   Class 0 IoU = 0.8412
+[12:15:17.001]   Class 1 IoU = 0.5072
+[12:15:17.001]   Class 2 IoU = 0.5371
+[12:15:17.105] save model to ./model_out\last_model.pth
+[12:15:55.708] Train epoch: 87 : loss : 0.263649, loss_ce: 0.348544, loss_dice: 0.207052, train_acc: 0.8718
+[12:15:58.791] Val epoch: 87 : loss : 0.288526, loss_ce: 0.409935, loss_dice: 0.207586
+[12:15:58.791] Val epoch 87: Pixel Accuracy = 0.8484
+[12:15:58.791]   Class 0 IoU = 0.8326
+[12:15:58.791]   Class 1 IoU = 0.4855
+[12:15:58.791]   Class 2 IoU = 0.5308
+[12:15:58.899] save model to ./model_out\last_model.pth
+[12:16:36.634] Train epoch: 88 : loss : 0.280362, loss_ce: 0.355194, loss_dice: 0.230474, train_acc: 0.8677
+[12:16:40.965] Val epoch: 88 : loss : 0.295000, loss_ce: 0.420111, loss_dice: 0.211593
+[12:16:40.965] Val epoch 88: Pixel Accuracy = 0.8465
+[12:16:40.965]   Class 0 IoU = 0.8338
+[12:16:40.965]   Class 1 IoU = 0.4751
+[12:16:40.965]   Class 2 IoU = 0.5305
+[12:16:41.071] save model to ./model_out\last_model.pth
+[12:17:17.809] Train epoch: 89 : loss : 0.260606, loss_ce: 0.351047, loss_dice: 0.200311, train_acc: 0.8703
+[12:17:21.567] Val epoch: 89 : loss : 0.281290, loss_ce: 0.404917, loss_dice: 0.198873
+[12:17:21.567] Val epoch 89: Pixel Accuracy = 0.8490
+[12:17:21.567]   Class 0 IoU = 0.8309
+[12:17:21.567]   Class 1 IoU = 0.5035
+[12:17:21.567]   Class 2 IoU = 0.5441
+[12:17:21.667] save model to ./model_out\best_model.pth
+[12:17:58.770] Train epoch: 90 : loss : 0.259280, loss_ce: 0.347750, loss_dice: 0.200300, train_acc: 0.8716
+[12:18:03.351] Val epoch: 90 : loss : 0.302424, loss_ce: 0.426121, loss_dice: 0.219959
+[12:18:03.351] Val epoch 90: Pixel Accuracy = 0.8453
+[12:18:03.351]   Class 0 IoU = 0.8352
+[12:18:03.351]   Class 1 IoU = 0.4431
+[12:18:03.351]   Class 2 IoU = 0.5306
+[12:18:03.455] save model to ./model_out\last_model.pth
+[12:18:40.094] Train epoch: 91 : loss : 0.266176, loss_ce: 0.357391, loss_dice: 0.205365, train_acc: 0.8669
+[12:18:43.759] Val epoch: 91 : loss : 0.288610, loss_ce: 0.409520, loss_dice: 0.208003
+[12:18:43.759] Val epoch 91: Pixel Accuracy = 0.8504
+[12:18:43.759]   Class 0 IoU = 0.8366
+[12:18:43.759]   Class 1 IoU = 0.4780
+[12:18:43.759]   Class 2 IoU = 0.5408
+[12:18:43.865] save model to ./model_out\last_model.pth
+[12:19:18.294] Train epoch: 92 : loss : 0.263347, loss_ce: 0.344875, loss_dice: 0.208994, train_acc: 0.8722
+[12:19:21.717] Val epoch: 92 : loss : 0.284020, loss_ce: 0.406871, loss_dice: 0.202119
+[12:19:21.717] Val epoch 92: Pixel Accuracy = 0.8484
+[12:19:21.717]   Class 0 IoU = 0.8332
+[12:19:21.717]   Class 1 IoU = 0.4941
+[12:19:21.717]   Class 2 IoU = 0.5356
+[12:19:21.824] save model to ./model_out\last_model.pth
+[12:19:59.035] Train epoch: 93 : loss : 0.261655, loss_ce: 0.349017, loss_dice: 0.203414, train_acc: 0.8700
+[12:20:02.720] Val epoch: 93 : loss : 0.287820, loss_ce: 0.411624, loss_dice: 0.205285
+[12:20:02.720] Val epoch 93: Pixel Accuracy = 0.8509
+[12:20:02.720]   Class 0 IoU = 0.8354
+[12:20:02.720]   Class 1 IoU = 0.4915
+[12:20:02.720]   Class 2 IoU = 0.5434
+[12:20:02.824] save model to ./model_out\last_model.pth
+[12:20:42.346] Train epoch: 94 : loss : 0.275077, loss_ce: 0.355541, loss_dice: 0.221434, train_acc: 0.8676
+[12:20:45.703] Val epoch: 94 : loss : 0.291943, loss_ce: 0.414017, loss_dice: 0.210560
+[12:20:45.703] Val epoch 94: Pixel Accuracy = 0.8502
+[12:20:45.703]   Class 0 IoU = 0.8375
+[12:20:45.703]   Class 1 IoU = 0.4926
+[12:20:45.703]   Class 2 IoU = 0.5177
+[12:20:45.806] save model to ./model_out\last_model.pth
+[12:21:26.494] Train epoch: 95 : loss : 0.262741, loss_ce: 0.345082, loss_dice: 0.207847, train_acc: 0.8711
+[12:21:29.668] Val epoch: 95 : loss : 0.288259, loss_ce: 0.412440, loss_dice: 0.205472
+[12:21:29.668] Val epoch 95: Pixel Accuracy = 0.8498
+[12:21:29.668]   Class 0 IoU = 0.8341
+[12:21:29.668]   Class 1 IoU = 0.4917
+[12:21:29.668]   Class 2 IoU = 0.5404
+[12:21:29.768] save model to ./model_out\last_model.pth
+[12:22:07.495] Train epoch: 96 : loss : 0.270031, loss_ce: 0.353989, loss_dice: 0.214060, train_acc: 0.8678
+[12:22:12.696] Val epoch: 96 : loss : 0.317990, loss_ce: 0.446893, loss_dice: 0.232056
+[12:22:12.697] Val epoch 96: Pixel Accuracy = 0.8390
+[12:22:12.697]   Class 0 IoU = 0.8296
+[12:22:12.697]   Class 1 IoU = 0.4199
+[12:22:12.697]   Class 2 IoU = 0.5251
+[12:22:12.804] save model to ./model_out\last_model.pth
+[12:22:49.889] Train epoch: 97 : loss : 0.261579, loss_ce: 0.344701, loss_dice: 0.206164, train_acc: 0.8728
+[12:22:53.863] Val epoch: 97 : loss : 0.298587, loss_ce: 0.425351, loss_dice: 0.214077
+[12:22:53.864] Val epoch 97: Pixel Accuracy = 0.8436
+[12:22:53.864]   Class 0 IoU = 0.8311
+[12:22:53.864]   Class 1 IoU = 0.4611
+[12:22:53.864]   Class 2 IoU = 0.5369
+[12:22:53.971] save model to ./model_out\last_model.pth
+[12:23:29.255] Train epoch: 98 : loss : 0.265441, loss_ce: 0.346736, loss_dice: 0.211245, train_acc: 0.8713
+[12:23:33.858] Val epoch: 98 : loss : 0.285415, loss_ce: 0.402259, loss_dice: 0.207519
+[12:23:33.859] Val epoch 98: Pixel Accuracy = 0.8501
+[12:23:33.859]   Class 0 IoU = 0.8346
+[12:23:33.859]   Class 1 IoU = 0.4743
+[12:23:33.859]   Class 2 IoU = 0.5389
+[12:23:33.968] save model to ./model_out\last_model.pth
+[12:24:11.785] Train epoch: 99 : loss : 0.261492, loss_ce: 0.348713, loss_dice: 0.203344, train_acc: 0.8702
+[12:24:16.023] Val epoch: 99 : loss : 0.283062, loss_ce: 0.404912, loss_dice: 0.201830
+[12:24:16.024] Val epoch 99: Pixel Accuracy = 0.8539
+[12:24:16.024]   Class 0 IoU = 0.8400
+[12:24:16.024]   Class 1 IoU = 0.5051
+[12:24:16.024]   Class 2 IoU = 0.5387
+[12:24:16.129] save model to ./model_out\last_model.pth
+[12:24:57.669] Train epoch: 100 : loss : 0.267602, loss_ce: 0.344674, loss_dice: 0.216221, train_acc: 0.8719
+[12:25:01.044] Val epoch: 100 : loss : 0.286699, loss_ce: 0.408564, loss_dice: 0.205456
+[12:25:01.045] Val epoch 100: Pixel Accuracy = 0.8481
+[12:25:01.045]   Class 0 IoU = 0.8335
+[12:25:01.045]   Class 1 IoU = 0.4856
+[12:25:01.045]   Class 2 IoU = 0.5380
+[12:25:01.147] save model to ./model_out\last_model.pth
+[12:25:39.618] Train epoch: 101 : loss : 0.266591, loss_ce: 0.353013, loss_dice: 0.208977, train_acc: 0.8678
+[12:25:43.624] Val epoch: 101 : loss : 0.305125, loss_ce: 0.427490, loss_dice: 0.223549
+[12:25:43.624] Val epoch 101: Pixel Accuracy = 0.8450
+[12:25:43.624]   Class 0 IoU = 0.8358
+[12:25:43.624]   Class 1 IoU = 0.4487
+[12:25:43.625]   Class 2 IoU = 0.5151
+[12:25:43.725] save model to ./model_out\last_model.pth
+[12:26:21.934] Train epoch: 102 : loss : 0.261332, loss_ce: 0.346237, loss_dice: 0.204729, train_acc: 0.8716
+[12:26:26.782] Val epoch: 102 : loss : 0.291335, loss_ce: 0.406010, loss_dice: 0.214886
+[12:26:26.782] Val epoch 102: Pixel Accuracy = 0.8486
+[12:26:26.782]   Class 0 IoU = 0.8383
+[12:26:26.783]   Class 1 IoU = 0.4519
+[12:26:26.783]   Class 2 IoU = 0.5279
+[12:26:26.887] save model to ./model_out\last_model.pth
+[12:27:05.587] Train epoch: 103 : loss : 0.258620, loss_ce: 0.349359, loss_dice: 0.198127, train_acc: 0.8694
+[12:27:09.584] Val epoch: 103 : loss : 0.285428, loss_ce: 0.404044, loss_dice: 0.206351
+[12:27:09.584] Val epoch 103: Pixel Accuracy = 0.8527
+[12:27:09.584]   Class 0 IoU = 0.8358
+[12:27:09.584]   Class 1 IoU = 0.4874
+[12:27:09.584]   Class 2 IoU = 0.5411
+[12:27:09.689] save model to ./model_out\last_model.pth
+[12:27:47.609] Train epoch: 104 : loss : 0.261700, loss_ce: 0.344766, loss_dice: 0.206322, train_acc: 0.8708
+[12:27:51.948] Val epoch: 104 : loss : 0.300257, loss_ce: 0.421644, loss_dice: 0.219333
+[12:27:51.948] Val epoch 104: Pixel Accuracy = 0.8453
+[12:27:51.948]   Class 0 IoU = 0.8339
+[12:27:51.949]   Class 1 IoU = 0.4495
+[12:27:51.949]   Class 2 IoU = 0.5268
+[12:27:52.051] save model to ./model_out\last_model.pth
+[12:28:30.400] Train epoch: 105 : loss : 0.260181, loss_ce: 0.346748, loss_dice: 0.202470, train_acc: 0.8713
+[12:28:33.761] Val epoch: 105 : loss : 0.293217, loss_ce: 0.413077, loss_dice: 0.213311
+[12:28:33.761] Val epoch 105: Pixel Accuracy = 0.8477
+[12:28:33.761]   Class 0 IoU = 0.8370
+[12:28:33.761]   Class 1 IoU = 0.4681
+[12:28:33.761]   Class 2 IoU = 0.5293
+[12:28:33.864] save model to ./model_out\last_model.pth
+[12:29:11.863] Train epoch: 106 : loss : 0.245812, loss_ce: 0.333979, loss_dice: 0.187034, train_acc: 0.8748
+[12:29:16.545] Val epoch: 106 : loss : 0.287834, loss_ce: 0.403587, loss_dice: 0.210666
+[12:29:16.545] Val epoch 106: Pixel Accuracy = 0.8500
+[12:29:16.545]   Class 0 IoU = 0.8385
+[12:29:16.545]   Class 1 IoU = 0.4714
+[12:29:16.545]   Class 2 IoU = 0.5272
+[12:29:16.650] save model to ./model_out\last_model.pth
+[12:29:55.846] Train epoch: 107 : loss : 0.253581, loss_ce: 0.341675, loss_dice: 0.194853, train_acc: 0.8720
+[12:29:59.273] Val epoch: 107 : loss : 0.283513, loss_ce: 0.401833, loss_dice: 0.204633
+[12:29:59.273] Val epoch 107: Pixel Accuracy = 0.8489
+[12:29:59.273]   Class 0 IoU = 0.8346
+[12:29:59.273]   Class 1 IoU = 0.4858
+[12:29:59.275]   Class 2 IoU = 0.5360
+[12:29:59.377] save model to ./model_out\last_model.pth
+[12:30:38.712] Train epoch: 108 : loss : 0.259582, loss_ce: 0.334352, loss_dice: 0.209735, train_acc: 0.8757
+[12:30:42.498] Val epoch: 108 : loss : 0.290518, loss_ce: 0.410983, loss_dice: 0.210208
+[12:30:42.498] Val epoch 108: Pixel Accuracy = 0.8466
+[12:30:42.498]   Class 0 IoU = 0.8341
+[12:30:42.498]   Class 1 IoU = 0.4658
+[12:30:42.498]   Class 2 IoU = 0.5366
+[12:30:42.603] save model to ./model_out\last_model.pth
+[12:31:19.433] Train epoch: 109 : loss : 0.253373, loss_ce: 0.339569, loss_dice: 0.195910, train_acc: 0.8725
+[12:31:23.488] Val epoch: 109 : loss : 0.274873, loss_ce: 0.387537, loss_dice: 0.199764
+[12:31:23.488] Val epoch 109: Pixel Accuracy = 0.8540
+[12:31:23.488]   Class 0 IoU = 0.8390
+[12:31:23.488]   Class 1 IoU = 0.4865
+[12:31:23.488]   Class 2 IoU = 0.5454
+[12:31:23.593] save model to ./model_out\best_model.pth
+[12:32:03.533] Train epoch: 110 : loss : 0.246965, loss_ce: 0.333876, loss_dice: 0.189025, train_acc: 0.8735
+[12:32:07.699] Val epoch: 110 : loss : 0.295331, loss_ce: 0.408252, loss_dice: 0.220050
+[12:32:07.699] Val epoch 110: Pixel Accuracy = 0.8486
+[12:32:07.700]   Class 0 IoU = 0.8368
+[12:32:07.700]   Class 1 IoU = 0.4380
+[12:32:07.700]   Class 2 IoU = 0.5307
+[12:32:07.805] save model to ./model_out\last_model.pth
+[12:32:48.897] Train epoch: 111 : loss : 0.254160, loss_ce: 0.342095, loss_dice: 0.195536, train_acc: 0.8722
+[12:32:53.286] Val epoch: 111 : loss : 0.284903, loss_ce: 0.402428, loss_dice: 0.206554
+[12:32:53.286] Val epoch 111: Pixel Accuracy = 0.8504
+[12:32:53.286]   Class 0 IoU = 0.8385
+[12:32:53.286]   Class 1 IoU = 0.4768
+[12:32:53.286]   Class 2 IoU = 0.5412
+[12:32:53.389] save model to ./model_out\last_model.pth
+[12:33:31.593] Train epoch: 112 : loss : 0.267070, loss_ce: 0.348231, loss_dice: 0.212962, train_acc: 0.8695
+[12:33:35.858] Val epoch: 112 : loss : 0.287305, loss_ce: 0.398583, loss_dice: 0.213121
+[12:33:35.858] Val epoch 112: Pixel Accuracy = 0.8504
+[12:33:35.858]   Class 0 IoU = 0.8391
+[12:33:35.858]   Class 1 IoU = 0.4681
+[12:33:35.858]   Class 2 IoU = 0.5180
+[12:33:35.957] save model to ./model_out\last_model.pth
+[12:34:15.217] Train epoch: 113 : loss : 0.254573, loss_ce: 0.336598, loss_dice: 0.199889, train_acc: 0.8735
+[12:34:19.441] Val epoch: 113 : loss : 0.286391, loss_ce: 0.399175, loss_dice: 0.211201
+[12:34:19.441] Val epoch 113: Pixel Accuracy = 0.8488
+[12:34:19.442]   Class 0 IoU = 0.8381
+[12:34:19.442]   Class 1 IoU = 0.4557
+[12:34:19.442]   Class 2 IoU = 0.5337
+[12:34:19.548] save model to ./model_out\last_model.pth
+[12:34:59.813] Train epoch: 114 : loss : 0.254982, loss_ce: 0.338042, loss_dice: 0.199609, train_acc: 0.8737
+[12:35:04.044] Val epoch: 114 : loss : 0.274975, loss_ce: 0.386691, loss_dice: 0.200498
+[12:35:04.044] Val epoch 114: Pixel Accuracy = 0.8543
+[12:35:04.044]   Class 0 IoU = 0.8376
+[12:35:04.044]   Class 1 IoU = 0.4843
+[12:35:04.044]   Class 2 IoU = 0.5506
+[12:35:04.152] save model to ./model_out\last_model.pth
+[12:35:41.834] Train epoch: 115 : loss : 0.261335, loss_ce: 0.346212, loss_dice: 0.204750, train_acc: 0.8705
+[12:35:46.615] Val epoch: 115 : loss : 0.284863, loss_ce: 0.397529, loss_dice: 0.209753
+[12:35:46.615] Val epoch 115: Pixel Accuracy = 0.8513
+[12:35:46.615]   Class 0 IoU = 0.8402
+[12:35:46.615]   Class 1 IoU = 0.4656
+[12:35:46.615]   Class 2 IoU = 0.5347
+[12:35:46.716] save model to ./model_out\last_model.pth
+[12:36:26.955] Train epoch: 116 : loss : 0.246477, loss_ce: 0.335566, loss_dice: 0.187085, train_acc: 0.8737
+[12:36:30.409] Val epoch: 116 : loss : 0.289344, loss_ce: 0.406398, loss_dice: 0.211309
+[12:36:30.409] Val epoch 116: Pixel Accuracy = 0.8469
+[12:36:30.409]   Class 0 IoU = 0.8347
+[12:36:30.409]   Class 1 IoU = 0.4567
+[12:36:30.410]   Class 2 IoU = 0.5360
+[12:36:30.522] save model to ./model_out\last_model.pth
+[12:37:10.206] Train epoch: 117 : loss : 0.264996, loss_ce: 0.337815, loss_dice: 0.216450, train_acc: 0.8739
+[12:37:14.786] Val epoch: 117 : loss : 0.287136, loss_ce: 0.397336, loss_dice: 0.213670
+[12:37:14.786] Val epoch 117: Pixel Accuracy = 0.8514
+[12:37:14.786]   Class 0 IoU = 0.8398
+[12:37:14.786]   Class 1 IoU = 0.4430
+[12:37:14.786]   Class 2 IoU = 0.5429
+[12:37:14.895] save model to ./model_out\last_model.pth
+[12:37:51.378] Train epoch: 118 : loss : 0.245057, loss_ce: 0.333353, loss_dice: 0.186193, train_acc: 0.8742
+[12:37:55.962] Val epoch: 118 : loss : 0.285885, loss_ce: 0.395774, loss_dice: 0.212625
+[12:37:55.962] Val epoch 118: Pixel Accuracy = 0.8494
+[12:37:55.962]   Class 0 IoU = 0.8382
+[12:37:55.963]   Class 1 IoU = 0.4555
+[12:37:55.963]   Class 2 IoU = 0.5319
+[12:37:56.065] save model to ./model_out\last_model.pth
+[12:38:32.345] Train epoch: 119 : loss : 0.256221, loss_ce: 0.336763, loss_dice: 0.202525, train_acc: 0.8742
+[12:38:35.972] Val epoch: 119 : loss : 0.285151, loss_ce: 0.402634, loss_dice: 0.206830
+[12:38:35.972] Val epoch 119: Pixel Accuracy = 0.8478
+[12:38:35.972]   Class 0 IoU = 0.8348
+[12:38:35.972]   Class 1 IoU = 0.4670
+[12:38:35.972]   Class 2 IoU = 0.5363
+[12:38:36.072] save model to ./model_out\last_model.pth
+[12:39:12.625] Train epoch: 120 : loss : 0.254473, loss_ce: 0.337973, loss_dice: 0.198806, train_acc: 0.8726
+[12:39:16.955] Val epoch: 120 : loss : 0.281283, loss_ce: 0.394840, loss_dice: 0.205578
+[12:39:16.955] Val epoch 120: Pixel Accuracy = 0.8493
+[12:39:16.955]   Class 0 IoU = 0.8359
+[12:39:16.955]   Class 1 IoU = 0.4700
+[12:39:16.955]   Class 2 IoU = 0.5406
+[12:39:17.065] save model to ./model_out\last_model.pth
+[12:39:54.909] Train epoch: 121 : loss : 0.244748, loss_ce: 0.331741, loss_dice: 0.186752, train_acc: 0.8754
+[12:39:58.320] Val epoch: 121 : loss : 0.280761, loss_ce: 0.398704, loss_dice: 0.202132
+[12:39:58.320] Val epoch 121: Pixel Accuracy = 0.8512
+[12:39:58.320]   Class 0 IoU = 0.8371
+[12:39:58.320]   Class 1 IoU = 0.4893
+[12:39:58.320]   Class 2 IoU = 0.5401
+[12:39:58.422] save model to ./model_out\last_model.pth
+[12:40:38.741] Train epoch: 122 : loss : 0.246370, loss_ce: 0.329402, loss_dice: 0.191015, train_acc: 0.8759
+[12:40:42.939] Val epoch: 122 : loss : 0.278658, loss_ce: 0.393296, loss_dice: 0.202233
+[12:40:42.939] Val epoch 122: Pixel Accuracy = 0.8538
+[12:40:42.939]   Class 0 IoU = 0.8409
+[12:40:42.939]   Class 1 IoU = 0.4760
+[12:40:42.939]   Class 2 IoU = 0.5509
+[12:40:43.042] save model to ./model_out\last_model.pth
+[12:41:20.686] Train epoch: 123 : loss : 0.259651, loss_ce: 0.335223, loss_dice: 0.209270, train_acc: 0.8746
+[12:41:24.460] Val epoch: 123 : loss : 0.276693, loss_ce: 0.392450, loss_dice: 0.199522
+[12:41:24.460] Val epoch 123: Pixel Accuracy = 0.8502
+[12:41:24.460]   Class 0 IoU = 0.8359
+[12:41:24.461]   Class 1 IoU = 0.4972
+[12:41:24.461]   Class 2 IoU = 0.5310
+[12:41:24.565] save model to ./model_out\last_model.pth
+[12:42:02.101] Train epoch: 124 : loss : 0.256089, loss_ce: 0.337554, loss_dice: 0.201780, train_acc: 0.8729
+[12:42:06.315] Val epoch: 124 : loss : 0.278153, loss_ce: 0.392500, loss_dice: 0.201921
+[12:42:06.315] Val epoch 124: Pixel Accuracy = 0.8511
+[12:42:06.315]   Class 0 IoU = 0.8376
+[12:42:06.315]   Class 1 IoU = 0.4786
+[12:42:06.316]   Class 2 IoU = 0.5417
+[12:42:06.425] save model to ./model_out\last_model.pth
+[12:42:45.606] Train epoch: 125 : loss : 0.254024, loss_ce: 0.333112, loss_dice: 0.201298, train_acc: 0.8744
+[12:42:49.497] Val epoch: 125 : loss : 0.288485, loss_ce: 0.401187, loss_dice: 0.213350
+[12:42:49.497] Val epoch 125: Pixel Accuracy = 0.8503
+[12:42:49.497]   Class 0 IoU = 0.8388
+[12:42:49.498]   Class 1 IoU = 0.4575
+[12:42:49.498]   Class 2 IoU = 0.5320
+[12:42:49.605] save model to ./model_out\last_model.pth
+[12:43:28.123] Train epoch: 126 : loss : 0.250478, loss_ce: 0.332046, loss_dice: 0.196100, train_acc: 0.8756
+[12:43:32.678] Val epoch: 126 : loss : 0.282482, loss_ce: 0.399420, loss_dice: 0.204523
+[12:43:32.678] Val epoch 126: Pixel Accuracy = 0.8495
+[12:43:32.678]   Class 0 IoU = 0.8350
+[12:43:32.678]   Class 1 IoU = 0.4765
+[12:43:32.678]   Class 2 IoU = 0.5462
+[12:43:32.782] save model to ./model_out\last_model.pth
+[12:44:11.471] Train epoch: 127 : loss : 0.251664, loss_ce: 0.335201, loss_dice: 0.195973, train_acc: 0.8740
+[12:44:15.012] Val epoch: 127 : loss : 0.275601, loss_ce: 0.389569, loss_dice: 0.199622
+[12:44:15.012] Val epoch 127: Pixel Accuracy = 0.8519
+[12:44:15.012]   Class 0 IoU = 0.8385
+[12:44:15.013]   Class 1 IoU = 0.4881
+[12:44:15.013]   Class 2 IoU = 0.5441
+[12:44:15.120] save model to ./model_out\last_model.pth
+[12:44:59.615] Train epoch: 128 : loss : 0.253513, loss_ce: 0.330306, loss_dice: 0.202318, train_acc: 0.8758
+[12:45:03.853] Val epoch: 128 : loss : 0.278714, loss_ce: 0.393317, loss_dice: 0.202312
+[12:45:03.853] Val epoch 128: Pixel Accuracy = 0.8497
+[12:45:03.853]   Class 0 IoU = 0.8358
+[12:45:03.853]   Class 1 IoU = 0.4834
+[12:45:03.853]   Class 2 IoU = 0.5351
+[12:45:03.960] save model to ./model_out\last_model.pth
+[12:45:42.583] Train epoch: 129 : loss : 0.254681, loss_ce: 0.332981, loss_dice: 0.202480, train_acc: 0.8752
+[12:45:45.621] Val epoch: 129 : loss : 0.293005, loss_ce: 0.414388, loss_dice: 0.212083
+[12:45:45.621] Val epoch 129: Pixel Accuracy = 0.8447
+[12:45:45.621]   Class 0 IoU = 0.8317
+[12:45:45.622]   Class 1 IoU = 0.4595
+[12:45:45.622]   Class 2 IoU = 0.5373
+[12:45:45.722] save model to ./model_out\last_model.pth
+[12:46:24.016] Train epoch: 130 : loss : 0.253448, loss_ce: 0.331381, loss_dice: 0.201492, train_acc: 0.8751
+[12:46:28.816] Val epoch: 130 : loss : 0.272769, loss_ce: 0.378998, loss_dice: 0.201950
+[12:46:28.816] Val epoch 130: Pixel Accuracy = 0.8542
+[12:46:28.817]   Class 0 IoU = 0.8424
+[12:46:28.817]   Class 1 IoU = 0.4714
+[12:46:28.817]   Class 2 IoU = 0.5432
+[12:46:28.918] save model to ./model_out\best_model.pth
+[12:47:54.823] Train epoch: 131 : loss : 0.244556, loss_ce: 0.333092, loss_dice: 0.185532, train_acc: 0.8748
+[12:47:58.996] Val epoch: 131 : loss : 0.276364, loss_ce: 0.389477, loss_dice: 0.200955
+[12:47:58.996] Val epoch 131: Pixel Accuracy = 0.8526
+[12:47:58.996]   Class 0 IoU = 0.8390
+[12:47:58.996]   Class 1 IoU = 0.4900
+[12:47:58.996]   Class 2 IoU = 0.5363
+[12:47:59.103] save model to ./model_out\last_model.pth
+[12:49:47.643] Train epoch: 132 : loss : 0.247042, loss_ce: 0.329738, loss_dice: 0.191911, train_acc: 0.8755
+[12:49:57.243] Val epoch: 132 : loss : 0.280478, loss_ce: 0.396980, loss_dice: 0.202811
+[12:49:57.244] Val epoch 132: Pixel Accuracy = 0.8487
+[12:49:57.246]   Class 0 IoU = 0.8338
+[12:49:57.248]   Class 1 IoU = 0.4861
+[12:49:57.249]   Class 2 IoU = 0.5394
+[12:49:57.478] save model to ./model_out\last_model.pth
+[12:51:54.982] Train epoch: 133 : loss : 0.250331, loss_ce: 0.334582, loss_dice: 0.194163, train_acc: 0.8736
+[12:52:05.151] Val epoch: 133 : loss : 0.275621, loss_ce: 0.393048, loss_dice: 0.197337
+[12:52:05.151] Val epoch 133: Pixel Accuracy = 0.8505
+[12:52:05.152]   Class 0 IoU = 0.8353
+[12:52:05.153]   Class 1 IoU = 0.5016
+[12:52:05.153]   Class 2 IoU = 0.5385
+[12:52:05.374] save model to ./model_out\last_model.pth
+[12:53:55.923] Train epoch: 134 : loss : 0.254621, loss_ce: 0.335995, loss_dice: 0.200372, train_acc: 0.8732
+[12:54:09.714] Val epoch: 134 : loss : 0.278525, loss_ce: 0.387584, loss_dice: 0.205819
+[12:54:09.715] Val epoch 134: Pixel Accuracy = 0.8523
+[12:54:09.716]   Class 0 IoU = 0.8383
+[12:54:09.716]   Class 1 IoU = 0.4626
+[12:54:09.717]   Class 2 IoU = 0.5452
+[12:54:09.953] save model to ./model_out\last_model.pth
+[12:56:18.524] Train epoch: 135 : loss : 0.245839, loss_ce: 0.328257, loss_dice: 0.190894, train_acc: 0.8757
+[12:56:29.870] Val epoch: 135 : loss : 0.284932, loss_ce: 0.398966, loss_dice: 0.208910
+[12:56:29.870] Val epoch 135: Pixel Accuracy = 0.8510
+[12:56:29.871]   Class 0 IoU = 0.8382
+[12:56:29.871]   Class 1 IoU = 0.4684
+[12:56:29.872]   Class 2 IoU = 0.5376
+[12:56:30.103] save model to ./model_out\last_model.pth
+[12:58:24.642] Train epoch: 136 : loss : 0.248451, loss_ce: 0.332887, loss_dice: 0.192160, train_acc: 0.8747
+[12:58:35.220] Val epoch: 136 : loss : 0.274582, loss_ce: 0.387480, loss_dice: 0.199316
+[12:58:35.221] Val epoch 136: Pixel Accuracy = 0.8528
+[12:58:35.221]   Class 0 IoU = 0.8395
+[12:58:35.221]   Class 1 IoU = 0.4953
+[12:58:35.221]   Class 2 IoU = 0.5374
+[12:58:35.414] save model to ./model_out\last_model.pth
+[13:00:25.403] Train epoch: 137 : loss : 0.250593, loss_ce: 0.327756, loss_dice: 0.199150, train_acc: 0.8767
+[13:00:35.577] Val epoch: 137 : loss : 0.273460, loss_ce: 0.388638, loss_dice: 0.196674
+[13:00:35.578] Val epoch 137: Pixel Accuracy = 0.8522
+[13:00:35.578]   Class 0 IoU = 0.8368
+[13:00:35.578]   Class 1 IoU = 0.5072
+[13:00:35.578]   Class 2 IoU = 0.5403
+[13:00:35.792] save model to ./model_out\last_model.pth
+[13:02:42.170] Train epoch: 138 : loss : 0.239263, loss_ce: 0.324296, loss_dice: 0.182575, train_acc: 0.8772
+[13:02:53.952] Val epoch: 138 : loss : 0.268891, loss_ce: 0.381712, loss_dice: 0.193677
+[13:02:53.952] Val epoch 138: Pixel Accuracy = 0.8531
+[13:02:53.953]   Class 0 IoU = 0.8380
+[13:02:53.953]   Class 1 IoU = 0.5052
+[13:02:53.954]   Class 2 IoU = 0.5468
+[13:02:54.166] save model to ./model_out\best_model.pth
+[13:04:53.613] Train epoch: 139 : loss : 0.247530, loss_ce: 0.334309, loss_dice: 0.189677, train_acc: 0.8736
+[13:05:04.310] Val epoch: 139 : loss : 0.278563, loss_ce: 0.395687, loss_dice: 0.200480
+[13:05:04.311] Val epoch 139: Pixel Accuracy = 0.8504
+[13:05:04.312]   Class 0 IoU = 0.8351
+[13:05:04.312]   Class 1 IoU = 0.4905
+[13:05:04.312]   Class 2 IoU = 0.5432
+[13:05:04.564] save model to ./model_out\last_model.pth
+[13:06:59.708] Train epoch: 140 : loss : 0.253694, loss_ce: 0.330173, loss_dice: 0.202708, train_acc: 0.8764
+[13:07:13.283] Val epoch: 140 : loss : 0.274200, loss_ce: 0.385315, loss_dice: 0.200123
+[13:07:13.284] Val epoch 140: Pixel Accuracy = 0.8532
+[13:07:13.287]   Class 0 IoU = 0.8404
+[13:07:13.287]   Class 1 IoU = 0.4879
+[13:07:13.288]   Class 2 IoU = 0.5387
+[13:07:13.530] save model to ./model_out\last_model.pth
+[13:09:17.656] Train epoch: 141 : loss : 0.246631, loss_ce: 0.328180, loss_dice: 0.192265, train_acc: 0.8750
+[13:09:28.828] Val epoch: 141 : loss : 0.274148, loss_ce: 0.389391, loss_dice: 0.197319
+[13:09:28.829] Val epoch 141: Pixel Accuracy = 0.8511
+[13:09:28.829]   Class 0 IoU = 0.8356
+[13:09:28.830]   Class 1 IoU = 0.5025
+[13:09:28.831]   Class 2 IoU = 0.5407
+[13:09:29.064] save model to ./model_out\last_model.pth
+[13:10:20.426] Train epoch: 142 : loss : 0.258756, loss_ce: 0.335380, loss_dice: 0.207673, train_acc: 0.8736
+[13:10:24.355] Val epoch: 142 : loss : 0.280288, loss_ce: 0.393743, loss_dice: 0.204651
+[13:10:24.356] Val epoch 142: Pixel Accuracy = 0.8502
+[13:10:24.356]   Class 0 IoU = 0.8357
+[13:10:24.356]   Class 1 IoU = 0.4765
+[13:10:24.356]   Class 2 IoU = 0.5398
+[13:10:24.467] save model to ./model_out\last_model.pth
+[13:11:00.701] Train epoch: 143 : loss : 0.246932, loss_ce: 0.332260, loss_dice: 0.190048, train_acc: 0.8742
+[13:11:04.116] Val epoch: 143 : loss : 0.279633, loss_ce: 0.397247, loss_dice: 0.201224
+[13:11:04.116] Val epoch 143: Pixel Accuracy = 0.8501
+[13:11:04.116]   Class 0 IoU = 0.8365
+[13:11:04.116]   Class 1 IoU = 0.4871
+[13:11:04.116]   Class 2 IoU = 0.5465
+[13:11:04.218] save model to ./model_out\last_model.pth
+[13:11:43.293] Train epoch: 144 : loss : 0.249226, loss_ce: 0.334379, loss_dice: 0.192457, train_acc: 0.8732
+[13:11:47.532] Val epoch: 144 : loss : 0.279098, loss_ce: 0.390122, loss_dice: 0.205083
+[13:11:47.533] Val epoch 144: Pixel Accuracy = 0.8505
+[13:11:47.533]   Class 0 IoU = 0.8366
+[13:11:47.533]   Class 1 IoU = 0.4723
+[13:11:47.533]   Class 2 IoU = 0.5363
+[13:11:47.639] save model to ./model_out\last_model.pth
+[13:12:36.708] Train epoch: 145 : loss : 0.249358, loss_ce: 0.334421, loss_dice: 0.192649, train_acc: 0.8740
+[13:12:40.099] Val epoch: 145 : loss : 0.276187, loss_ce: 0.391135, loss_dice: 0.199554
+[13:12:40.099] Val epoch 145: Pixel Accuracy = 0.8496
+[13:12:40.099]   Class 0 IoU = 0.8339
+[13:12:40.099]   Class 1 IoU = 0.4883
+[13:12:40.099]   Class 2 IoU = 0.5413
+[13:12:40.207] save model to ./model_out\last_model.pth
+[13:13:19.561] Train epoch: 146 : loss : 0.250400, loss_ce: 0.337055, loss_dice: 0.192630, train_acc: 0.8732
+[13:13:22.661] Val epoch: 146 : loss : 0.274514, loss_ce: 0.392220, loss_dice: 0.196043
+[13:13:22.661] Val epoch 146: Pixel Accuracy = 0.8503
+[13:13:22.661]   Class 0 IoU = 0.8353
+[13:13:22.661]   Class 1 IoU = 0.5034
+[13:13:22.661]   Class 2 IoU = 0.5416
+[13:13:22.766] save model to ./model_out\last_model.pth
+[13:13:59.605] Train epoch: 147 : loss : 0.251945, loss_ce: 0.337851, loss_dice: 0.194674, train_acc: 0.8734
+[13:14:04.288] Val epoch: 147 : loss : 0.269674, loss_ce: 0.380322, loss_dice: 0.195909
+[13:14:04.288] Val epoch 147: Pixel Accuracy = 0.8546
+[13:14:04.289]   Class 0 IoU = 0.8414
+[13:14:04.289]   Class 1 IoU = 0.4970
+[13:14:04.289]   Class 2 IoU = 0.5454
+[13:14:04.391] save model to ./model_out\last_model.pth
+[13:14:42.618] Train epoch: 148 : loss : 0.246252, loss_ce: 0.330816, loss_dice: 0.189876, train_acc: 0.8748
+[13:14:46.679] Val epoch: 148 : loss : 0.276365, loss_ce: 0.388600, loss_dice: 0.201541
+[13:14:46.679] Val epoch 148: Pixel Accuracy = 0.8527
+[13:14:46.679]   Class 0 IoU = 0.8403
+[13:14:46.679]   Class 1 IoU = 0.4850
+[13:14:46.679]   Class 2 IoU = 0.5353
+[13:14:46.781] save model to ./model_out\last_model.pth
+[13:15:25.262] Train epoch: 149 : loss : 0.252077, loss_ce: 0.329398, loss_dice: 0.200530, train_acc: 0.8750
+[13:15:29.049] Val epoch: 149 : loss : 0.275391, loss_ce: 0.389498, loss_dice: 0.199319
+[13:15:29.050] Val epoch 149: Pixel Accuracy = 0.8532
+[13:15:29.050]   Class 0 IoU = 0.8390
+[13:15:29.050]   Class 1 IoU = 0.4896
+[13:15:29.050]   Class 2 IoU = 0.5499
+[13:15:29.159] save model to ./model_out\last_model.pth

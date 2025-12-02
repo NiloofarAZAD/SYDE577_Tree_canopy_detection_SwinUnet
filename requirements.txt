@@ -9,5 +9,18 @@ medpy
 SimpleITK
 scipy
 h5py
-timm
+timm==0.5.4
 einops
+yacs
+
+
+module --force purge
+module load StdEnv/2023
+module load gcc/12.3
+module load cuda/12.2
+module load python/3.10
+module load opencv/4.10.0
+source ~/envs/syde577env/bin/activate
+
+
+# local pc => python train.py --cfg configs/swin_tiny_patch4_window7_224_lite.yaml --output_dir ./model_out --num_workers 0 --root_path ./datasets/Synapse --list_dir ./datasets/Synapse/lists

@@ -34,14 +34,9 @@ def chain(lst: list[list]):
 
 def npz_csv():
     datasets_config = {
-        # 'CT_CORONARY': {
-        #     'data_dir': f'{args.nnunet}/Dataset002_china_narco/nnUNetPlans_2d',
-        #     'num_classes': 3 + 1,  # plus background
-        #     'predict_head': 1
-        # },
         'MRI_MM': {
             'data_dir': f'{args.nnunet}/Dataset001_mm/nnUNetPlans_2d',
-            'num_classes': 3 + 1,  # plus background
+            'num_classes': 3 + 1, 
             'predict_head': 0
         },
     }
@@ -98,8 +93,6 @@ def process_file(config, split_path, filepath, file_samples):
             seg_ = seg[:, z_index, ...]
             img_path = join(split_path,
                             f"{DirUtils.split_extension(split(filepath)[-1], suffix=f'_{z_index:04}')}")
-            # seg_path = join(split_path,
-            #                 f"{DirUtils.split_extension(split(filepath)[-1], suffix=f'_{z_index:04}_seg')}")
             if not exists(img_path):
                 seg_ = seg_.squeeze(0)
                 seg_[seg_ < 0] = 0
@@ -110,7 +103,6 @@ def process_file(config, split_path, filepath, file_samples):
                  config['num_classes'],
                  ]
             )
-            # np.savez(seg_path, seg_)
     else:
         samples = [[
             filepath,
