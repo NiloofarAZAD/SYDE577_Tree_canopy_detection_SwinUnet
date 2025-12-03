@@ -70,19 +70,19 @@ Models compared:
 - **DINOv2**
 
 ### Key Findings from the Report
-- Dataset contains *only 150 labeled images*, making it an extreme low-data scenario :contentReference[oaicite:3]{index=3}  
-- **CNN-based models** (YOLOv11, Mask R-CNN) consistently outperform Vision Transformers :contentReference[oaicite:4]{index=4}  
+- Dataset contains *only 150 labeled images*, making it an extreme low-data scenario 
+- **CNN-based models** (YOLOv11, Mask R-CNN) consistently outperform Vision Transformers 
 - **Swin-Unet** trains stably and achieves strong pixel accuracy (~0.85), but performs poorly on instance-level mAP 
-  (~0.02) due to boundary fragmentation in polygonization :contentReference[oaicite:5]{index=5}  
+  (~0.02) due to boundary fragmentation in polygonization
 - **DINOv2** fails to generalize to evaluation images due to insufficient domain-specific pretraining and extreme 
-  data scarcity :contentReference[oaicite:6]{index=6}  
+  data scarcity
 - YOLOv11-Large achieves the highest weighted mAP (~0.28) among all tested architectures :contentReference[oaicite:7]{index=7}  
 - Transformer models require **far more data** or **domain-aligned pretraining** to be competitive in remote sensing
 
 ### Included in the Report
 - Loss curves for all architectures  
-- Pixel accuracy curves for DINOv2 and Swin-Unet (pages 5–6) :contentReference[oaicite:8]{index=8}  
-- Visual segmentation comparisons across all five models (Figure on page 7) :contentReference[oaicite:9]{index=9}  
+- Pixel accuracy curves for DINOv2 and Swin-Unet (pages 5–6) 
+- Visual segmentation comparisons across all five models (Figure on page 7)
 - Discussion on CNN vs. Transformer behavior under low-data constraints  
 - Final conclusions on model suitability for ecological applications
 
